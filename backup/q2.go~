@@ -1,0 +1,28 @@
+package main
+
+import(
+    "fmt"
+)
+
+var c1 chan int
+
+func main(){
+    var i int
+    c1=make(chan int)
+    go lp()
+L:  for {
+        select {
+        case i=<-c1 : 
+            if i > 8 {
+                break L
+            }
+        }
+    }
+}
+
+func lp(){
+    for i:=0; i < 10; i++{
+        c1<-1
+        fmt.Printf("%v\n", i)
+    }
+}

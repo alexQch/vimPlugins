@@ -1,0 +1,28 @@
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main(){
+    s := "The Test"
+    var ss [3]string
+    var p *string
+    ss[0] = string('a')
+    ss[1] = string('b')
+    ss[2] = string('c')
+    cs := strings.Split(s,"", 10)
+    //var p *string
+    //p = &s
+    //fmt.Printf("%s\n",*p)
+
+    for _,q := range cs {
+        fmt.Printf("%s\t",q)
+    }
+
+    p = &ss[2]
+    fmt.Printf("%s\n", *p)
+    p--;
+}
+

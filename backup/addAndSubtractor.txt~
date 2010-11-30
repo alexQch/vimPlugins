@@ -1,0 +1,8 @@
+SUBDESIGN AdderSubtractor2
+(
+    a[3..0], b[3..0]    :INPUT ;
+    clk, reset, Add/Sub c[3..0], overflow :INPUT  
+    c[3..0], overflow   :OUTPUT;
+)
+Variable A_INPUT[4..0] , B_INPUT[4..0], C_OUTPUT[4..0], A/S , overflow :DFF;
+result[4..0] :wire; 

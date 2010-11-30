@@ -1,0 +1,24 @@
+#!/bin/bash 
+i=0
+echo "This is the disk situation"
+sudo fdisk -l|grep '/dev/.*'
+df
+
+
+while [ true ]
+do
+    echo "Which one do you want to mount ? enter 0 to exit"
+    read a
+    if [ $a -eq 0 ];then
+        exit 0
+    else
+        td="`sudo fdisk -l|grep '^/dev/.*'|awk {'print $1'}|grep ".*$a$"`"
+        echo "mounting $td"
+        if [[ ! -d /media/$a$i ]]; then
+            sudo mkdir /media/$a$i
+        fi
+        sudo mount $td /media/$a$i
+        i=$((i+1))
+    fi
+done
+

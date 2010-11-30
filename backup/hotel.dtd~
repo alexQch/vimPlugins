@@ -1,0 +1,20 @@
+<!ELEMENT HotelS (Hotel Room Booking Guest)*>
+    <!ELEMENT Hotel (hotelNo, hotelName, city)>
+        <!ELEMENT hotelNo (#PCDATA)>
+        <!ELEMENT hotelName (#PCDATA)>
+        <!ELEMENT city (#PCDATA)>
+    <!ELEMENT Room (roomNo, hotelNo, type, price)>
+        <!ELEMENT roomNo (#PCDATA)>
+        <!ELEMENT hotelNo (#PCDATA)>
+        <!ELEMENT type (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+    <!ELEMENT Booking (hotelNo, guestNo, dateFrom, dateTo, roomNo)>
+        <!ELEMENT hotelNo (#PCDATA)>
+        <!ELEMENT guestNo (#PCDATA)>
+        <!ELEMENT dateFrom (#PCDATA)>
+        <!ELEMENT dateTo (#PCDATA)>
+        <!ELEMENT roomNo (#PCDATA)>
+    <!ELEMENT Guest (guestNo, guestName, guestAddress)>
+        <!ELEMENT guestNo (#PCDATA)>
+        <!ELEMENT guestName (#PCDATA)>
+        <!ELEMENT guestAddress (#PCDATA)>

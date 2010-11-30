@@ -1,0 +1,40 @@
+#programs do not need to manage
+manage off Conky
+
+
+#manage off Conky
+#exec conky 
+
+#key bindings
+bind off Mod4+t
+bind on Mod4+t exec urxvt
+bind on XF86AudioRaiseVolume exec aumix -v +5
+bind on XF86AudioLowerVolume exec aumix -v -5
+#use Mod4 + No. to change working group
+bind on Mod4+1 use 0
+bind on Mod4+2 use g1
+bind on Mod4+3 use g2
+bind on Mod4+4 use g3
+
+
+
+set border_focus Orange
+set window_open_frame empty
+set focus_follow_mouse 1
+
+#make sure the range of every group
+pad 0 0 0 20
+hook on ^add pad 0 0 0 20
+
+#add groups
+add g1
+add g2
+add g3
+
+use 0
+
+#exec conky
+exec feh --bg-scale /home/alex/wallpaper/Golden_Eagle2.jpg
+exec xfce4-panel 
+
+

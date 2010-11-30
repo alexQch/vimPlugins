@@ -1,0 +1,148 @@
+import java.applet.*; 
+import java.awt.*; 
+import java.awt.event.*;
+
+ 
+public class Gui extends Applet implements ActionListener {
+//create buttons	
+	Button ok; 
+    Button exit;
+    Button credit;
+    Button savings;
+    Button deposit;
+    Button withdraw;
+    Button transferto;
+    Button balance;
+    
+//create textfields    
+    TextField pin;
+    TextField transaction;
+
+//create label    
+    Label result;
+
+//create a new ATMAccount object 
+	ATMAccount ATM = new ATMAccount();
+	
+	 public void init() { 
+		setLayout(null);
+//initialize the button and give it a text		
+	 	ok=new Button("OK");
+		exit=new Button("Exit");
+		credit=new Button("Credit");
+		savings=new Button("Savings");
+		deposit=new Button("Deposit");
+		withdraw=new Button("Withdraw");
+		transferto=new Button("Transfer To");
+		balance=new Button("Balance");
+		
+//initialize the text field	
+		pin= new TextField();
+		transaction= new TextField();
+		
+//initialize the label		
+		result= new Label("");
+		
+//set the location and size of these components of applet, and add them into the applet		
+		ok.setBounds(250,10,70,20);
+		add(ok);
+		exit.setBounds(325,10,70,20);
+		add(exit);
+		credit.setBounds(250,40,70,20);
+		add(credit);
+		savings.setBounds(325,40,70,20);
+		add(savings);
+		deposit.setBounds(250,100,70,20);
+		add(deposit);
+		withdraw.setBounds(325,100,70,20);
+		add(withdraw);
+		transferto.setBounds(400,100,70,20);
+		add(transferto);
+		balance.setBounds(300,130,120,20);
+		add(balance);
+		pin.setBounds(140,10,100,20);
+		add(pin);
+		transaction.setBounds(250,70,100,20);
+		add(transaction);
+		result.setBounds(120,175,800,20);
+		add(result);
+		
+// Attach actions to the components		
+	 	ok.addActionListener(this);
+		exit.addActionListener(this);
+		credit.addActionListener(this);
+		savings.addActionListener(this);
+		deposit.addActionListener(this);
+		withdraw.addActionListener(this);
+		transferto.addActionListener(this);
+		balance.addActionListener(this);
+	 } 
+	 
+	public void paint(Graphics g) {
+//draw text on screen 		 
+		  g.drawString("Enter Pin Number",20,25); 
+		  g.drawString("Select account for Transaction",20,55);
+		  g.drawString("Enter amount for Transaction",20,85);
+		  g.drawString("Select Action",20,115);
+		  g.drawString("Check account balance?",20,145);
+	     }
+	 
+	 public void actionPerformed(ActionEvent evt){
+		 
+		 String M=transaction.getText();
+
+//once the user press "OK" button and the pin is correct, system log in
+//if the pin is wrong, it will display error information and require the user to enter password again
+//if the user has been logged in, the information will be displayed
+		 if (evt.getSource() == ok){
+			 if (ATM.permission==true){
+				 result.setText("You are already logged in!");
+			 }else{
+				 String pinnum= pin.getText();
+				 if(pinnum.equals(ATMAccount.pinNumber)){
+					 ATM.permission=true;
+					 pin.setText("Log in!");
+					 result.setText("Welcome!");
+				 }else{
+					 ATM.permission=false;
+					 pin.setText("");
+					 result.setText("Pin error!Try again.");
+				 }
+			 }
+		 }
+         else if (evt.getSource() == exit){
+ //            setVisible(false);
+             stop();
+             destroy();
+		 }
+         else if (ATM.permission==false){
+			 result.setText("Please log in!");
+		 }
+         else if (evt.getSource() == credit && ATM.permission==true){
+			 ATM.setaccount(1);
+		 }
+         else if (evt.getSource() ==savings && ATM.permission==true){
+			 ATM.setaccount(2);
+		 } 
+         else if (evt.getSource() ==deposit && ATM.permission==true){
+			 ATM.tra=Double.valueOf(M).doubleValue();
+			 ATM.setact(1);
+		 }
+         else if (evt.getSource() ==withdraw && ATM.permission==true){
+			 ATM.tra=Double.valueOf(M).doubleValue();
+			 ATM.setact(2);
+		 }
+         else if (evt.getSource() ==transferto && ATM.permission==true){
+			 ATM.tra=Double.valueOf(M).doubleValue();
+			 ATM.setact(3);
+		 }
+         else if (evt.getSource() == balance && ATM.permission==true){
+
+			 ATM.tra=Double.valueOf(M).doubleValue();			 
+			 ATM.getBalanceGUI(ATM.account);
+			 result.setText(ATM.result);
+		 }
+	 }
+
+
+}

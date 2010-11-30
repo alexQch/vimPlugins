@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<!DOCTYPE HotelS SYSTEM "HotelS.dtd">
+<HotelS>
+    <Hotel hotelNo="h1">
+        <hotelName>LiverpoolH1</hotelName>
+        <city>Liverpool</city>
+    </Hotel>
+    <Hotel hotelNo="h5">
+        <hotelName>LondonH3</hotelName>
+        <city>London</city>
+    </Hotel>
+    <Hotel hotelNo="h3">
+        <hotelName>LondonH3</hotelName>
+        <city>London</city>
+    </Hotel>
+    <Hotel hotelNo="h4">
+        <hotelName>Grosvenor</hotelName>
+        <city>Liverpool</city>
+    </Hotel>
+    <Hotel hotelNo="h2">
+        <hotelName>LiverpoolH2</hotelName>
+        <city>Liverpool</city>
+    </Hotel>
+    <Room hotelNo="h1" roomNo="r3">
+        <type>family</type>
+        <price>15</price>
+    </Room>
+    <Room hotelNo="h2" roomNo="r2">
+        <type>double</type>
+        <price>28</price>
+    </Room>
+    <Room hotelNo="h1" roomNo="r2">
+        <type>double</type>
+        <price>18</price>
+    </Room>
+    <Room hotelNo="h1" roomNo="r1">
+        <type>single</type>
+        <price>13</price>
+    </Room>
+    <Booking hotelNo="h1" guestNo="g1" dateFrom="Aug">
+        <roomNo>r1</roomNo>
+        <dateTo>Nov</dateTo>
+    </Booking>
+    <Booking hotelNo="h1" guestNo="g2" dateFrom="Oct">
+        <roomNo>r1</roomNo>
+        <dateTo>Nov</dateTo>
+    </Booking>
+    <Booking hotelNo="h1" guestNo="g1" dateFrom="Nov">
+        <roomNo>r1</roomNo>
+        <dateTo>Nov</dateTo>
+    </Booking>
+    <Guest guestNo="g1">
+        <guestName>Todd</guestName>
+        <guestAddress>LiverpoolH1</guestAddress>
+    </Guest>
+    <Guest guestNo="g2">
+        <guestName>Tom</guestName>
+        <guestAddress>LondonH3 Hotel</guestAddress>
+    </Guest>
+    <Guest guestNo="g3">
+        <guestName>Ted</guestName>
+        <guestAddress>LiverpoolH2</guestAddress>
+    </Guest>
+    <Guest guestNo="g4">
+        <guestName>Alex</guestName>
+        <guestAddress>Grosvenor Hotel</guestAddress>
+    </Guest>
+</HotelS>
+

@@ -1,0 +1,47 @@
+# 
+# deb cdrom:[Debian GNU/Linux 5.0.6 _Lenny_ - Official i386 NETINST Binary-1 20100905-11:24]/ squeeze main
+
+#deb cdrom:[Debian GNU/Linux 5.0.6 _Lenny_ - Official i386 NETINST Binary-1 20100905-11:24]/ squeeze main
+
+deb http://http.us.debian.org/debian stable main contrib non-free
+deb http://non-us.debian.org/debian-non-US stable/non-US main contrib non-free
+deb http://security.debian.org stable/updates main contrib non-free
+
+deb http://http.us.debian.org/debian testing main contrib non-free
+deb http://non-us.debian.org/debian-non-US testing/non-US main contrib non-free
+deb http://security.debian.org testing/updates main contrib non-free
+# Testing 
+#deb http://ftp.debian.org/debian/ testing main contrib non-free
+#deb-src http://ftp.debian.org/debian/ testing main contrib non-free
+#Testing Security updates
+#deb http://security.debian.org/ testing/updates main contrib
+#deb-src http://security.debian.org/ testing/updates main contrib
+
+# Debian Volatile http://www.debian.org/volatile/
+#deb http://volatile.debian.org/debian-volatile squeeze/volatile main contrib non-free
+
+#chrome
+deb http://dl.google.com/linux/deb/ stable non-free main
+
+#wireless
+deb http://ftp.us.debian.org/debian lenny main contrib non-free
+
+#skype
+deb http://download.skype.com/linux/repos/debian/ stable non-free
+
+#gogglesmm
+deb http://apt.progchild.de stable main
+deb-src http://apt.progchild.de stable main
+
+# Google software repository
+deb http://dl.google.com/linux/deb/ stable non-free
+
+#VirtualBox Puel
+deb http://download.virtualbox.org/virtualbox/debian intrepid non-free
+
+#debian multimedia packages
+#deb http://www.debian-multimedia.org sid main
+#deb http://www.debian-multimedia.org testing main
+
+#cinelerra
+deb http://giss.tv:8000/debian32 ./

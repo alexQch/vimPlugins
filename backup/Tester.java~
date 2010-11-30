@@ -1,0 +1,93 @@
+class tester{
+	public static final int MAXVALUE = 150;
+
+	public static void main(String[] args){
+        
+        long t1 = 0, t2 = 0;//to calculate the running time
+        /*Three arrays to store the depth of each kind of binary tree*/
+		double[] DtRootDown = new double[10];
+		double[] DtLeafUp = new double[10];
+		double[] DtUniformTree = new double[10];
+
+
+        /*Three arrays to store the TIME of each kind of binary tree*/
+		double[] tDtRootDown = new double[10];
+		double[] tDtLeafUp = new double[10];
+		double[] tDtUniformTree = new double[10];
+
+
+
+
+
+		RandomTrees rt = new RandomTrees();
+        BinaryTree tRootDown;
+        BinaryTree tLeafUp;
+        BinaryTree tUniformTree;
+
+		int n = 50;
+        System.out.println("number" + "\tRootDown\ttime\tLeafUp\ttime\t\tUniform\ttime");
+        
+        while(n <= MAXVALUE){
+            int i = 0;
+            while(i < 10){
+                //run the garbage collector to ensure that everything is new
+                System.gc();
+                tRootDown = rt.RootDown(n);
+                tLeafUp = rt.LeafUp(n);
+                tUniformTree = rt.UniformTree(n);
+
+                t1 = System.nanoTime();
+                DtRootDown[i] = depth(tRootDown);
+                t2= System.nanoTime();
+                if(DtRootDown[i] == 1) NLtRootDown[i] ++;
+                tDtRootDown[i] = t2 - t1;
+
+                t1 = System.nanoTime();
+                DtLeafUp[i] = depth(tLeafUp);
+                t2= System.nanoTime();
+                if(DtLeafUp[i] == 1) NLtLeafUp[i] ++;
+                tDtLeafUp[i] = t2 - t1;
+
+                t1 = System.nanoTime();
+                DtUniformTree[i] = depth(tUniformTree);
+                t2= System.nanoTime();
+                if(DtUniformTree[i] == 1) NLtUniformTree[i] ++;
+                tDtUniformTree[i] = t2 - t1;
+
+                System.out.println( n + "\t" +  DtRootDown[i] + "\t" + tDtRootDown[i] + "\t" + "\t" + DtLeafUp[i] +"\t" + tDtLeafUp[i] + "\t" + "\t" + DtUniformTree[i]+ "\t" + tDtUniformTree[i] + "\t" ); 
+                i+=1;
+            }
+        System.out.println("The average depth is : \nRootDown: " + averageValue(DtRootDown) + " Average Time: " + averageValue(tDtRootDown)  
+                + "\nLeafUp: " + averageValue(DtLeafUp) + " Average Time: " + averageValue(tDtLeafUp) + "\n UniformTree: " + 
+                averageValue(DtUniformTree) + " Average Time: " + averageValue(tDtUniformTree));
+        n+=10;
+        }
+
+
+
+	}
+
+	public static int depth(BinaryTree t){
+		if(t.IsLeafNode()) return 1;
+		else {
+			return (1+ maxDepth(t.LeftTree, t.RightTree));
+		}
+
+	}
+	
+	public static int maxDepth(BinaryTree t1, BinaryTree t2){
+        int d1 = depth(t1), d2 = depth(t2);
+        return ( d1 > d2 ? d1 : d2 );
+	}
+
+    public static double averageValue(double a[]){
+        double r = 0;
+        double b;
+        for (int i = 0;i < a.length ;i++ ) {
+            r += a[i];
+        }
+        b = r/a.length;
+        return b;
+    }
+}
+

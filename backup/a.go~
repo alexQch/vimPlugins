@@ -1,0 +1,40 @@
+package main
+
+import (
+    "fmt"
+)
+
+type I interface {
+    Get() int;
+    Put(int) ;
+}
+
+type S struct {
+    i int;
+}
+
+func (s *S) Put(j int){
+    s.i = j;
+}
+func (s *S) Get() int {
+    return s.i;
+}
+
+
+func main(){
+     var s S
+     f(&s)
+     i := 5
+     fmt.Printf("%v\n",g(&i))
+
+}
+
+func f(p I){
+    fmt.Println(p.Get())
+    p.Put(1)
+    fmt.Println(p.Get())
+}
+
+func g(any interface{} ) int {
+    return any.(I).Get()
+}

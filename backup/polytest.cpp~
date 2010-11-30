@@ -1,0 +1,65 @@
+/*
+ *          File: polytest.cpp
+ *        Author: Robert I. Pitts <rip@cs.bu.edu>
+ * Last Modified: April 21, 2000
+ *         Topic: Introduction to Polymorphism in C++
+ * ----------------------------------------------------------------
+ *
+ * OVERVIEW:
+ * =========
+ * This program illustrates polymorphism using some employee objects.
+ */
+
+#include <iostream>
+#include <string>
+using namespace std;
+#include "employee.h"
+#include "manager.h"
+
+void PrintPay(Employee &empl,float hoursWorked);
+
+int main()
+{
+	Employee *emplP;
+
+	// Ask user for employee type and dynamically allocate memory for chosen type
+	int choice;
+	cout << "What kind of employee do you want, 1 for Employee, 2 for Manager: ";
+	cin >> choice;
+
+	if (choice == 1) 
+		emplP = new Employee("John Burke", 25.0);
+	else if (choice == 2) 
+		emplP = new Manager("Jan Kovacs", 35.0, true);
+	else 
+	{
+		cerr << "Unrecognized kind of employee!" << endl;	//similar to cout, but used for ourput error message
+		return 1;  // Exit program, returning error code.
+	}
+
+	float workhour=40.0;
+	cout << "\nEmployee info..." << endl;
+	cout << "Name: " << emplP->getName() << endl;
+	cout << "Pay Rate: " << emplP->getPayRate() << endl;
+	cout << "Worked hours: " << workhour <<endl;
+
+	cout << "\nUsing pay() method..." << endl;
+	cout << "Pay: " << emplP->pay(workhour) << endl;
+
+	cout << "\nUsing PrintPay() function..." << endl;
+	PrintPay(*emplP, workhour);
+
+	cout << "\nUsing printPay() method..." << endl;
+	emplP->printPay(workhour);
+
+	cout << "\nEmployee info using print() method..." << endl;
+	emplP->print(workhour);
+
+
+	return 0;
+}
+
+void PrintPay(Employee &empl,float hoursWorked)
+{
+  cout << "Pay: " << empl.pay(hoursWorked) << endl;
+}

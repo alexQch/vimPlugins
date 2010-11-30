@@ -1,0 +1,59 @@
+\documentclass{article}
+\begin{document}
+\title{My \emph{Second} try on \LaTeX}
+\author{Chenhui Quan}
+\date{\today}
+\maketitle
+
+The three basic steps in producing a printed document using \LaTeX\ are as follows:
+\begin{enumerate}
+\item Use a previewer
+\end{enumerate}
+\renewcommand{\descriptionlabel}[1]{\hspace{1cm}\textsf{#1}}
+\begin{description}
+\item[\TeX] A type setting program
+\item[EMacs] A text editor and also
+    \begin{description}
+    \item a programming environment
+    \item a mailer
+    \item and a lot of else besides
+    \end{description}
+\end{description}
+
+Let's take stock of what we've learnt
+\begin{tabbing}
+    \hspace{1cm}\= \textbf{\TeX\ asdfasdfsdfasfda}        \= A typesetting program\kill
+                \>\textbf{AbiWord}\quad\> A word processor\\[5pt]
+                \> \textbf{Emacs}       \> A text editor\\[5pt]
+                \> \textbf{\TeX\ asdfasdfsdfasfda}        \> A typesetting program
+\end{tabbing}
+
+\begin{tabbing}
+         \textbf{AbiWord}\quad\= A word processor\\[5pt]
+         \textbf{Emacs}\quad\> A text editor\\[5pt]
+         \textbf{\TeX}\quad\> A typesetting program
+\end{tabbing}
+
+\begin{tabbing}
+    \hspace{1cm}\=\textbf{AbiWord}\quad\= A word processor\kill
+    \>\textbf{\TeX}\quad   \> A typesetting program\+\+\\[5pt]
+    \<\=\textbf{Emacs}\quad   \= A text editor\\[5pt]
+    \=\textbf{Abiword}\quad\= A word processor\\[5pt]
+    \pushtabs
+    \hspace{3cm}\= The Advanced \TeX\ Book \quad \= David Salmon \quad \= Springer-Verlag\kill\\
+         \> Title                         \> Author             \> Publisher\\[8pt]
+         \> The \TeX Book \> Donald Knuth \> Addison-Wesley\\[8pt]
+    \> The Advanced \TeX\ Book \quad \> David Salmon \quad \> Springer-Verlag\\[8pt]
+    \poptabs
+    \>\textbf{Tutorial}\quad \> Just a tut
+           
+
+\end{tabbing}
+
+\begin{tabbing}
+\end{tabbing}
+
+
+
+\end{document}
+

@@ -1,0 +1,159 @@
+\documentclass[12 pt,a4paper]{article}
+\linespread{1.5}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{html}
+\usepackage{url}
+\usepackage{harvard}
+\renewcommand{\harvardurl}{URL: \url}
+\title{The Report Of Experiment 17}
+\author{Chenhui Quan\\ ID No. 200750542 \\ Computer Science \& Electronic Engineering Department
+\and 
+Partner: Yuchong Cheng}
+\date{\today}
+\begin{document}
+\maketitle
+\clearpage
+\section*{ Exclusive Summary }
+The main purpose of this experiment is to train student for some basic skills for building electronic circuits with SK10 breadboard. Some skills of using the oscilloscope and function generator are also introduced. Students are also required to keep a notes on every measurements taken, comments made and the graph need to be plotted. \\
+In the first part, students are required to build a basic transistor amplifier known as a common emitter amplifier. The detailed information will be provided in sections below. During the second part, they need to use the circuit to amplify a.c. signals and try to find the output amplitude, maximum output amplitude, the gain of common emitter amplifier and etc. 
+\section*{ Introduction }
+This experiment was designed for giving general skills of building and testing electronic circuits using SK10 breadboard and oscilloscope. Some skills of preventing and handling common problems of electronic experiments are introduced as well.During this experiment, a common emitter amplifier circuit should be built and students should test its D.C. Bias Settings, frequency response and investigate different results according to various transistors. \\
+Common emitter amplifier is one of the basic component of bipolar-junction-transistor amplifiers in electronics engineering. There are three input heads of this transistor which are base terminal, collector and the emitter. This kind of amplifier often serves as a strong function of temperature, bias current.\cite{Wikipedia2010} 
+\section*{ Material }
+\begin{itemize}
+    \item Four Resisters: R$_1$ = 22K$\Omega$, R$_2$ = 4.7K$\Omega$, R$_3$ = 1.3K$\Omega$, R$_4$ = 330$\Omega$, VR$_1$ = 10K$\Omega$ and R$_L$ = 1.2K$\Omega$
+    \item SK10 breadboard
+    \item Oscilloscope
+    \item Function Generator
+    \item Multimeter
+    \item 3 Capacitors: $C_1 = 4.7\mu\ F, C_2 = 4.7\mu\ F, C_3 = 2200\mu\ F$
+    \item Transistor: BC109
+\end{itemize}
+
+\section*{ Methodology }
+\subsection*{Part 1 - DC bias of a Common Emitter Amplifier}
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=40mm]{figure1.png}
+    \caption{Circuit ofr part 1 step 1}
+    \label{fig:1}
+\end{figure}
+In this part, we are required to build a common emitter amplifier using four resisters of resistance 22K$\Omega$, 4.7K$\Omega$, 1.3K$\Omega$, 330$\Omega$ and a transistor. The first thing we do is to check whether the SK10 breadboard is ready to use. We use two wires each connected to the positive and negative side of the power supply. Afterwards, we put the other side of the red wire into the top line of the SK10 breadboard and the black wire into the bottom line. Then we use the oscilloscope with two proper scope probes to check the voltage of the supply rail on SK10.\\ 
+The next thing is to connect R$_1$ and R$2$ in series to the power supply. The positive supply rail should be connected to the top head of $R_1$ and the negative rail should be connected to the bottom head of $R_2$ while the bottom head of $R_1$ and top head of $R_2$ are connected together. After that, we tested the voltage on the connecting point of $R_1 \ and\ R_2$.\\
+\begin{wrapfigure}{r}{60mm}
+    \begin{center}
+        \includegraphics[width=80mm]{figure2.jpg}
+    \end{center}
+    \caption{Circuit for part 1}
+    \label{fig:2}
+\end{wrapfigure}
+The next step is to insert a BC109 transistor. The base of the transistor is connected to the central of $R_1\ and \ R_2$, the collector and emitter should be inserted into two different columns of the SK10 breadboard. Then we connect the resistor $R_3$ and $R_4$ with collector and emitter as shown in Figure 2. On the purpose of testing the circuit, the oscilloscope should be used to measure the D.C. voltage on the base, collector and emitter of the amplifier. All measurements should be recorded and compared with the expected value provided.
+\subsection*{Part 2}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=130mm]{cfp2.jpg}
+    \end{center}
+    \caption{Circuit for part 2}
+    \label{fig:3}
+\end{figure}
+To avoid the introduction of A.C. signal from upsetting the D.C. bias of our circuit, some extra capacitors should be added, as they can hold back DC current while allowing signal with higher frequency to pass, such as ac signals. As a result, the capacitor $C_1$ is added as between resistors VR$_1$ and the central point of $R_1 \ connected \ with \ R_2$, the capacitor C$_2$ is connected to resistor R$_L$ which is finally connected to the negative power supply and C$_3$ is linked parallel with R$_4$. 
+\subsubsection*{Steps of Measurements}
+First of all, we set the signal generated by signal generator to 1000HZ with the amplitude of 50 mV and then write down the voltage across the resistor R$_L$ the amplitude of the output signal and the gain of the amplifier. \\ Secondly, we need to increase the amplitude of the input signal until the output signal becomes twisted and record the maximum amplitude of the input signal for this circuit.\\ 
+Secondly, we use another BC109 amplifier with the amplitude back to 50 mV again and check whether there is a difference to the amplitude of the signal on collector. \\
+Thirdly, so as to get the variation of amplitude on different frequency, we change the frequency of the signal generated by function generator from 10 Hz to 1 MHz, fifteen of which should be recorded. Finally, a graph $Y=20 \times \lg \frac{V_{out}}{V_{in}}$ will be plotted.
+\section*{Results}
+\subsubsection*{Part 1}
+\paragraph{Step 2}
+The voltage on the central conductor equals to $2.585 V$
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+         &Expected(V)&Actual(V)\\ \hline
+        Base voltage&2.5&2.528\\ \hline
+        emitter voltage&1.8&1.881\\ \hline
+        Collector voltage&8.4&8.25\\ \hline
+    \end{tabular}
+    \caption{The actual voltage on each terminal of transistor}
+    \label{tab:traMear}
+\end{table}
+\paragraph{Step 3} Testing the Circuit using oscilloscope measure the D.C. Voltage on the base, collector and emitter of the transistor.
+\paragraph{Measurements of another BC109 transistor}
+According to table \ref{tab:anttraMear} and table \ref{tab:traMear}, the differences of voltages on base, collector and emitter on different terminals are very small. So it can be derived that there is no significant impact on changing the transistor. 
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+         &Expected(V)&Actual(V)\\ \hline
+        Base voltage&2.5&2.531\\ \hline
+        Emitter voltage&1.8&1.889\\ \hline
+        Collector voltage&8.4&8.22\\ \hline
+    \end{tabular}
+    \caption{The actual voltage on each terminal of transistor}
+    \label{tab:anttraMear}
+\end{table}
+\subsubsection*{Part 2}
+\paragraph{Testing of Capacitor C$_1$}
+The output of the oscilloscope when measuring $C_1$ is a sine wave with 50 mV peak to peak.
+\paragraph{Measurement Of RL}
+The amplitude of the signal is 9.52 V and the gain is $\frac{V_{out}}{V_{in}} = \frac{9.52V}{50mV} = 190.4$
+\paragraph{Change the transistor}After changing transistor, we found that there is no much difference on the amplitude of the signal compared with the previous record. However, there is still slightly impact can be detected. 
+\paragraph{Output amplitude with frequency from 10 Hz to 1 MHz of input signal}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Frequency(HZ)&Output(V)\\
+        \hline
+        10.91&2.56\\
+        \hline
+        11.10&2.64\\
+        \hline
+        11.38&2.72\\
+        \hline
+        12.23&2.88\\
+        \hline
+        33.36&3.20\\
+        \hline
+        17.21&4.00\\
+        \hline
+        172.4&6.08\\
+        \hline
+        211.8&6.16\\
+        \hline
+        201K&6.32\\
+        \hline
+        22.47K&6.32\\
+        \hline
+        514.2K&3.92\\
+        \hline
+        723.5K&3.12\\
+        \hline
+        929.2K&2.64\\
+        \hline
+    \end{tabular}
+    \caption{Output amplitude with frequency from 10 Hz to 1 MHz}
+    \label{tab:oawf}
+\end{table}
+\paragraph{The Graph}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=150mm]{./figure.jpg}
+    \end{center}
+    \caption{The graph with $20\times \lg \frac{V_O}{V_I}$ VS $\lg Frequency$}
+    \label{fig:logf}
+\end{figure}
+This graph is plotted with $20 \times \lg \frac{V_o}{V_i}$ on the Y axis and $\lg Frequency$ on the X axis. As there are only fifteen data can be used, this graph is not accurate enough. However, it does show the general trends and give some graphical understanding to the relation of the frequency and amplitude.
+\section*{Discussion}
+As we can see from the previous data of this experiment, the effects on the DC bias and a.c. gain is not significantly large enough to take into consideration. \\ According to the figure \ref{fig:logf}, the response of the amplifier will first become larger with the increase of frequency. It will hit the peak point at approximately frequency equals $10^4$ and then it will start to fall down.
+
+
+
+\bibliographystyle{agsm}	% (uses file "plain.bst")
+\bibliography{wiki.bib}		% expects file "myrefs.bib"
+
+\end{document}
+
+                                                                     

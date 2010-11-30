@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+#define MAX 30
+
+int
+main(void){
+     char s[] = "Good morning~      Hello ";
+     char t[30];
+
+     escape(s, t);
+
+     int i;
+     for (i = 0; i < MAX; i++) {
+         /* code */
+         printf("%c", t[i]);
+     }
+
+     for (i = 0; i < MAX; i++) {
+         /* code */
+         printf("%d", t[i]);
+     }
+}
+
+void escape(char s[], char t[]){
+    int i = 0, j = 0;
+    while( i < MAX){
+        switch ((int)s[i]) {
+            case 9: 
+                t[j] = '\\';
+                t[++j] = 't';
+                break;
+            default:
+                t[j] = s[i];
+                break;
+                   
+        }
+
+        i++;
+        j++;
+    }
+}

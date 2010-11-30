@@ -1,0 +1,12 @@
+#Makefile for Go Programming
+
+include $(GOROOT)/src/Make.$(GOARCH)
+
+TARG=Aug07
+GOFILES=\
+	   Aug07.go\
+
+include $(GOROOT)/src/Make.pkg
+
+
+

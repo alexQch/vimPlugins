@@ -1,0 +1,59 @@
+/*
+ *This class is desinged to implement the t test calculation with the input of number of test and the output of t test result.
+ *As it is programmed specifically for the t test of the performance of anti-virus system, its constructor just simply initialize the variable n as the number of test and an instance of AntiVirusPerformanceData class.
+ *It has two method for the public, getTimeT(to get the t test result of time) and getCoverT(to get the t test result of virus covered). Both of them will first get the old and new data from the class AntiVirusPerformanceData, then get the difference, finally call the method getT for the final t test result.
+ *
+ */
+class TTester{
+    private int n;//this is used to store number of test.
+
+    private AntiVirusPerformanceData results;
+
+    TTester(int n){
+        this.n = n;
+        results = new AntiVirusPerformanceData(n);
+    }
+
+    public double getTimeT(){
+        int[] newTime= results.GetNewTime();
+        System.out.println("newTime Length: " + newTime.length);
+        int[] oldTime= results.GetOldTime();
+        int[] timeDiff = getDiff(newTime,oldTime);
+        //int[] timeDiff = getDiff(oldTime, newTime);
+        double t = getT(timeDiff,n);
+//        System.out.println("Time t-test value: " + t );
+        return t;
+
+    }
+
+    public double getCoverT(){
+        int[] oldCover = results.GetOldCover();
+        int[] newCover = results.GetNewCover();
+        int[] coverDiff = getDiff(oldCover, newCover);
+        double t = getT(coverDiff,n);
+//        System.out.println("Cover t-test value: " + t);
+        return t;
+    }
+
+
+    private double getT(int[] a, int n){
+        double mean = BasicStats.AverageValue(a,n);     
+        //double sD = BasicStats.StandardDeviation(a,n);
+        double sE = BasicStats.StandardError(a,n);
+//      Math.abs(mean)/(sD/Math.sqrt(n));
+        return Math.abs(mean)/(sE);
+//System.out.println("mean : " + mean + "\tstandardDeviation: " + sD + "\tstandardError: " + sE + "\tT-test Value:" + t);
+    }
+
+
+/*return the difference of array a and b*/
+    private int[] getDiff(int[] a, int[] b){
+        int[] diff = new int[n];
+        for(int i = 0 ; i < n ; i ++){
+            diff[i] = (a[i] - b[i]);
+        }
+        return diff;
+    }
+
+
+}

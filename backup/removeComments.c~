@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int
+main(void){
+    int c, bc;
+    while(((c = getchar()) != EOF) ){
+        bc = c;
+        c = getchar();
+        if(bc == '/' && (c == '/' )){
+            while((c = getchar()) != '\n');
+            continue;
+        }else if(bc == '/' && c =='*'){
+            while((c = getchar()) != EOF){
+                bc = c;
+                c = getchar();
+                if(bc == '*' && c == '/') break;
+            }
+        }
+
+        putchar(bc)
+    }
+
+    return 0;
+
+}

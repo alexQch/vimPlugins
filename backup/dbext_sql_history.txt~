@@ -1,0 +1,52 @@
+dbext history, <enter> or dbl-click to execute, or [q] to quit (history size:50)
+1.       select * from Loan;
+2.       select * from Customer;
+3. 		SELECT DISTINCT Customer.Name, (YEAR(SYSDATE())-YEAR(Customer.Date_of_birth)) From Customer, Loan WHERE (Customer.User_id = Loan.User_id) and (Loan.Date_ret is Null);
+4.         update Customer set Date_of_birth = '1963-01-22';
+5.         update Customer set Date_of_birth = '1963';
+6.         alter table Customer modify Date_of_birth date;
+7.         alter table Customer modify Date_of_birth year;
+8.         use c2;
+9. 		SELECT DISTINCT Customer.Name, (YEAR(SYSDATE())-Customer.Date_of_birth) From Customer, Loan WHERE (Customer.User_id = Loan.User_id) and (Loan.Date_ret is Null);
+10. 		SELECT DISTINCT Customer.Name, age =(YEAR(SYSDATE())-Customer.Date_of_birth) From Customer, Loan WHERE (Customer.User_id = Loan.User_id) and (Loan.Date_ret is Null);
+11. 		SELECT DISTINCT Customer.Name, (YEAR(GetDate())-Customer.Date_of_birth) From Customer, Loan WHERE (Customer.User_id = Loan.User_id) and (Loan.Date_ret is Null);
+12. 		SELECT DISTINCT Customer.Name, (SYSDATE()-Customer.Date_of_birth) From Customer, Loan WHERE (Customer.User_id = Loan.User_id) and (Loan.Date_ret is Null);
+13.         alter table Customer modify (Date_of_birth date);
+14.         alter table Customer modify (Date_of_birth year);
+15.         alter table Customer alter column (Date_of_birth year);
+16.         alter table Customer alter column Date_of_birth year;
+17.         alter table Customer alter Date_of_birth year;
+18.         alter table Customer alter Date_of_birth date;
+19.         alter table Customer Add Date_of_birth date;
+20.  select * from Customer
+21. describe table Custmoer;
+22. describe Custmoer;
+23. decribe Custmoer;
+24. 		SELECT DISTINCT Customer.Name, SYSDATE()-Customer.Date_of_birth From Customer, Loan WHERE (Customer.User_id = Loan.User_id) and (Loan.Date_ret is Null);
+25. 		SELECT DISTINCT Book.Title FROM Book, Loan WHERE Loan.Paid = 1 AND Loan.Book_no = Book.Book_no ORDER BY Book.Title;
+26. 		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE ( Book.Book_no = Loan.Book_no  ) AND (Book.Title REGEXP '.*Software.*') AND (Customer.User_id = Loan.User_id);
+27. 		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE ( Book.Book_no = Loan.Book_no  ) AND (Book.Title REGEXP '.*Software.*') AND (Book.Book_no = Loan.Book_no) AND (Customer.User_id = Loan.User_id);
+28. 		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE ( Book.Book_no = Loan.Book_no  ) AND (Book.Title REGEXP '.*Software.*') AND (Book.Book_no = Loan.Book_no) AND (Customer.User_id = Loan.User_id));
+29. 		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE ( Book.Book_no IN (SELECT DISTINCT Book_no FROM Loan ) AND (Book.Title REGEXP '.*Software.*') AND (Book.Book_no = Loan.Book_no) AND (Customer.User_id = Loan.User_id));
+30. 		SELECT DISTINCT Customer.Name, Customer.Age From Customer, Loan WHERE (Customer.User_id = Loan.User_id) and (Loan.Date_ret is Null);
+31. 		SELECT DISTINCT Customer.Name, Customer.Age From Customer, Loan WHERE Customer.User_id = Loan.User_id;
+32.         SELECT Book.Book_no, Book.Title FROM Book, Loan WHERE ((Loan.User_id BETWEEN 100 AND 200 ) AND Loan.Book_no = Book.Book_no ) GROUP BY User_id HAVING SUM(Loan.Fine) > 2;
+33. 		SELECT Book_no, Title FROM Book WHERE ( Book_no in ( SELECT Book_no FROM Loan WHERE User_id BETWEEN 100 AND 200 GROUP BY User_id HAVING SUM(Fine) > 2));
+34. SELECT DISTINCT User_id From Loan WHERE (Fine >= 2) And (Paid = true);
+35. 		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE (Book.Book_no IN (SELECT DISTINCT Book_no FROM Loan ) AND (Book.Title REGEXP '.*Software.*') AND (Book.Book_no = Loan.Book_no) AND (Customer.User_id = Loan.User_id));
+36.  select * from Loan;   
+37.         DELETE FROM Loan WHERE (Paid = 1) OR (Fine = 0);
+38.  select * from loan;   
+39.         UPDATE Loan SET Fine = IF(Date_ret is Null, (SYSDATE() - Date_due) * 0.2, (Date_ret - Date_due) * 0.2) WHERE ((Date_ret is Null) OR (Date_ret > Date_due)) AND (Fine = 0);
+40. 		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE (Book.Book_no IN (SELECT DISTINCT Book_no FROM Loan )) AND (Book.Title REGEXP '.*Software.*') AND (Book.Book_no = Loan.Book_no) AND (Customer.User_id = Loan.User_id);
+41.   SELECT Book_no FROM Loan WHERE User_id BETWEEN 99 AND 201 ;  
+42.   SELECT Book_no FROM Loan WHERE User_id BETWEEN 99 AND 201 GROUP BY User_id HAVING SUM(Fine) > 2;  
+43.   SELECT Book_no FROM Loan WHERE User_id BETWEEN 100 AND 200 GROUP BY User_id HAVING SUM(Fine) > 2;  
+44. 		SELECT Book_no, Title FROM Book 
+45. show tables;
+46. select * from Loan
+47. DELETE FROM Loan WHERE (Paid = 1) OR (Fine = 0);
+48. select * from 
+49. UPDATE Loan set Paid = 0 Where Fine = 36.5;
+50. SELECT IF(Date_ret is Null, SYSDATE(), Date_ret) FROM Loan;
+51. SELECT IF(Date_ret is Null, SYSDATE, Date_ret) FROM Loan;

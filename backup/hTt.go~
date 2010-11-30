@@ -1,0 +1,60 @@
+package main
+
+import(
+    "fmt"
+    "bufio"
+    "os"
+)
+
+func main(){
+    buf := make([]byte, 1048576)
+    fileName := "./"+os.Args[1]
+    fmt.Printf("%v\n", fileName)
+    f, err := os.Open(fileName, os.O_RDONLY, 0666)
+    if err != nil {
+        return
+    }
+    defer f.Close()
+    w := bufio.NewWriter(os.Stdout)
+    defer w.Flush()
+    finalStr := string(tagGone(f, buf))
+    w.WriteString(finalStr)
+}
+
+func tagGone(f *os.File, buf []byte) ([]byte){
+    var tagS, atS bool
+    bout := make([]byte, 2097152) 
+    //sp := []byte("")
+    r := bufio.NewReader(f)
+    //for {
+        n, _ := r.Read(buf)
+        if n==0 {
+            //break
+        }
+        iBo := 0 //index for the position of bout that write to 
+        for n,i := range buf[0:n] {
+            st:=string(i)
+            if st == "<" {
+                tagS = true
+            }else if st == "&" {
+                atS = true
+            }
+            if tagS || atS {
+                //bout[iBo] = sp[0]
+                //bout[iBo+1] = sp[1]
+                //iBo+=2
+                if st == ">"{
+                    tagS= false
+                }else if st == ";" {
+                    atS = false
+                }
+            }else{
+                bout[iBo] = buf[n]
+                iBo++
+            }
+        }
+        //n = n-3350
+        //return buf[2000:n]
+        //}
+        return bout[:iBo-1000]
+}

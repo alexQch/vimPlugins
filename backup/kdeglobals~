@@ -1,0 +1,24 @@
+[$Version]
+update_info=kded.upd:kde3.0
+
+[KFileDialog Settings]
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=0
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Previews=false
+Recent URLs[$e]=$HOME/downloads/
+Show Bookmarks=false
+Show Full Path=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort reversed=false
+Speedbar Width=90
+View Style=Simple
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+

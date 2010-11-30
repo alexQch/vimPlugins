@@ -1,0 +1,45 @@
+/*
+ *          File: employee.h
+ *        Author: Robert I. Pitts <rip@cs.bu.edu>
+ * Last Modified: April 21, 2000
+ *         Topic: Introduction to Polymorphism in C++
+ * ----------------------------------------------------------------
+ *
+ * Employee class definition.
+ */
+
+#ifndef _EMPLOYEE_H		// If macro _EMPLOYEE_H hasn't been defined,
+#define _EMPLOYEE_H		// define _EMPLOYEE_H
+// In this program, it is to avoid the re-definition of the classes
+// More generally speaking, #ifndef / #define / #endif are usually used to avoid multiply include of some headers
+// _EMPLOYEE_H is an identifier, you can change it to any name as you like
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee 
+{
+public:
+	Employee(string theName, float thePayRate);
+
+	// A class with virtual methods should make its destructor virtual.
+	virtual ~Employee();
+
+	string getName() const;
+	float getPayRate() const;
+
+	float pay(float hoursWorked) const;
+
+	void printPay(float hoursWorked) const;
+
+	void print(float hoursWorked) const;
+
+
+
+protected:
+	string name;
+	float payRate;
+};
+
+#endif	// End the definition of _EMPLOYEE_H

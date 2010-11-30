@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{array}
+\begin{document}
+\title{My \emph{Third} try on \LaTeX}
+\author{Chenhui Quan\\ Alex Quan}
+\date{\today}
+\maketitle
+    \begin{center}
+        \begin{tabular}{lr}
+            Planet & Diameter\\[5pt]
+            Mercury & 4878\\
+            Venus & 121041\\
+            Earth & 12756\\
+            Mars & 6794
+        \end{tabular}
+    \end{center}
+
+    \begin{center}
+        \begin{tabular}{cr}
+            Planet & Diameter\\[5pt]
+            Mercury & 4878\\
+            Venus & 121041\\
+            Earth & 12756\\
+            Mars & 6794
+        \end{tabular}
+    \end{center}
+
+    \begin{center}
+        \begin{tabular}{lp{.8\linewidth}}
+            Planet & Features\\[5pt]
+            Mercury & Lunar like crust, crustal faulting, small magnetic fields.\\
+            Venus & Shrouded in clouds , undulating surface with highlands, plains, lowlands and craters.\\
+            Earth & Ocens of water filling lowlands between continents, unipue in supporting life, magnetic field.\\
+        \end{tabular}
+    \end{center} 
+
+
+    \begin{center}
+        \begin{tabular}{|l|r|}
+            \hline
+            %Planet & Diameter\\[5pt]
+            \multicolumn{1}{|m{1.5cm}|}{\centering Planet} & \multicolumn{1}{|m{2.3cm}|}{\centering Some kinds of Diameters}\\
+            \hline
+            Mercury & 4878\\
+            Venus & 121041\\
+            Earth & 12756\\
+            Mars & 6794\\
+            \hline
+        \end{tabular}
+    \end{center}
+     
+    \begin{center}
+        \begin{tabular}{lrr}
+            Planet & \multicolumn{2}{c}{Distance from sun (km)}\\ & Maximum & Minimum\\
+            Mercury & 694 & 468\\
+            Venus & 109 & 1076\\
+            Earth & 152 & 147\\
+            Mars & 249 & 274\\
+        \end{tabular}
+    \end{center}            
+
+    \begin{center}
+        \begin{tabular}{|l|r|r|}
+            \hline
+            \multicolumn{1}{|m{1.5cm}|}{\centering Planet} & \multicolumn{2}{c|}{Distance from sun (km)}\\ \cline{2-3} & Maximum & Minimum\\
+            \hline
+            Mercury & 694 & 468\\
+            Venus & 109 & 1076\\
+            Earth & 152 & 147\\
+            Mars & 249 & 274\\
+            \hline
+        \end{tabular}
+    \end{center}            
+
+
+    \begin{center}
+        \begin{tabular}{|l|r|r|}
+            \hline
+            Planet & \multicolumn{2}{r|}{Distance from sun (km)}\\ \cline{2-3} & Maximum & Minimum\\
+            \hline
+            Mercury & 694 & 468\\
+            Venus & 109 & 1076\\
+            Earth & 152 & 147\\
+            Mars & 249 & 274\\
+            \hline
+        \end{tabular}
+    \end{center}            
+
+    \begin{center}
+        \begin{tabular}{|c|r@{--}l|}
+            \hline
+            Height & \multicolumn{2}{c|}{Ideal weight}\\
+            (cm) & \multicolumn{2}{c|}{(kg)}\\
+            \hline
+            155 & 53.5 & 64\\
+            160 & 56 & 67\\[6pt]
+            190 & 78 & 92.5\\
+            \hline
+        \end{tabular}  
+    \end{center}
+
+    \begin{center}
+        \begin{tabular}{|c|r@{--}l|}
+            \hline
+            Height & \multicolumn{2}{|m{1.5cm}|}{\centering Weight}\\
+            (cm) & \multicolumn{2}{|m{1.5cm}|}{\centering (kg)}\\
+            \hline
+            155 & 53.5 & 64\\
+            160 & 56 & 67\\[6pt]
+            190 & 78 & 92.5\\
+            \hline
+        \end{tabular}  
+    \end{center}
+    
+\end{document}

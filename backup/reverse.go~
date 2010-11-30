@@ -1,0 +1,26 @@
+package main 
+
+import (
+    "fmt"
+    //"container/vector"
+    "strings"
+    "bufio"
+    "os"
+)
+
+
+func main(){
+    r := bufio.NewReader(os.Stdin)
+    s := r.ReadString(' ')
+    ss := strings.Split(s, "", len(s))
+    var rs [100]string
+    for i := 0; i < len(s); i++{
+         rs[len(s)-1-i] = ss[i] 
+    }
+
+    for _,j := range rs {
+        fmt.Printf("%v", j)
+    }
+
+
+}

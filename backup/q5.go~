@@ -1,0 +1,14 @@
+package main
+
+import (
+    "fmt"
+)
+
+func main(){
+    a,b := f(2,7)
+    fmt.Printf("%v,%v",a,b)
+}
+
+func f(a,b int){
+    return b,a
+}

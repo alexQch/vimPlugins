@@ -1,0 +1,68 @@
+SUBDESIGN state 
+  ( 
+	clk, reset 					: INPUT; 
+	inW, inX, inY, inZ 			: INPUT;
+	output1, output2			: OUTPUT;
+	output3, output4 			: OUTPUT;
+  ) 
+  
+  VARIABLE 
+	ss: MACHINE WITH STATES (stateA, stateB, stateC, stateD);
+  BEGIN 
+  
+  DEFAULTS 
+	output1 = GND;
+   output2 = GND;
+   output3 = GND;
+	output4 = GND;
+  END DEFAULTS;
+  ss.clk = clk;
+  ss.reset = reset;
+ 
+  CASE ss IS 
+	WHEN stateA => 
+		output1 = VCC;
+		IF !inY THEN
+			ss = stateC;
+		output4 = VCC;
+	ELSE 
+		ss = stateD;
+	END IF; 
+	WHEN stateB => 
+		output2 = VCC;
+	IF inZ THEN 
+		ss = stateA;
+	ELSE 
+	IF inW THEN 
+		output3 = VCC;
+		ss = stateD;
+	ELSE 
+	IF inY THEN 
+		ss = stateC;
+	ELSE 
+		output1 = VCC;
+		ss = stateB;
+	END IF;
+	END IF;
+	END IF;
+	WHEN stateC => 
+		output2 = VCC;
+	IF inX 
+	THEN 
+ss = stateC;
+	ELSE 
+		output1 = VCC;
+		ss = stateB;
+	END IF;
+	
+	WHEN stateD => 
+	output2 = VCC;
+	IF inY 
+	THEN 
+ss = stateC;
+	ELSE 
+		output1 = VCC;
+		ss = stateB; 
+	END IF; 
+	END CASE; 
+END;

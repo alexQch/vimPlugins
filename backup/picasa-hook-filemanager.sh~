@@ -1,0 +1,36 @@
+#!/bin/bash
+#---------< Hook File >------------------------------------------------------
+#
+#       Picasa 'Hook' file to allow Picasa to be more closely
+#   integrated with your desktop.
+#
+#   Picasa tries to integrate nicely with the Linux desktop where
+#   and when it can.  However, Linux does not have standard or
+#   well defined interfaces for many functions.
+#
+#   These hook files are provided by Google to allow users to
+#   fine tune their integration of Picasa with their particular
+#   Linux desktop environment.
+#
+#---------< hook-filemanager >------------------------------------------------
+#
+#   picasa-hook-filemanager.sh
+#
+#   This script is passed a command line with a single file name
+#
+#   The ideal behavior is for the file manager to open the directory
+#   that contains that file, with that file highlighted.
+#
+#   If this script exits with a status of 0, then Picasa will
+#   assume that you have handled the request, and will not perform
+#   any further processing.
+#
+#   To use this file:
+#       copy the picasa-hook-filemanager.sh.template file to
+#       some place in your path, and name it picasa-hook-filemanager.sh.
+#       Then edit the script to add the functionality you need
+#
+#----------------------------------------------------------------------------
+
+rox-filer $1
+exit 1

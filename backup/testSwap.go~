@@ -1,0 +1,36 @@
+package main
+
+import (
+    "fmt"
+)
+
+func main(){
+    a := 1
+    b := 2
+    var p *int
+    fmt.Println(a, b)
+    swap(&a, &b)
+    fmt.Println(a, b)
+    swap2(a, b)
+    fmt.Println(a, b)
+    swap(&a, &b)
+    fmt.Println(a, b)
+    *p = &a
+    *p += 1
+    b = *p
+    fmt.Println(a, b)
+
+
+}
+
+func swap(a, b *int){
+    tmp := *a
+    *a = *b
+    *b = tmp
+}
+
+func swap2(a, b int){
+    tmp := a
+    a = b
+    b = tmp
+}

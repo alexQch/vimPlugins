@@ -1,0 +1,10 @@
+# !/bin/sh
+#auto start
+
+feh --bg-scale /home/alex/wallpaper/night4.jpg 
+sleep 2
+conky&
+sleep 2
+feh --bg-scale /home/alex/wallpaper/night4.jpg 
+
+

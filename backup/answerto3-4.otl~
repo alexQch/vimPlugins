@@ -1,0 +1,71 @@
+Section A
+ Task1: 
+  CREATE DATABASE Library; 
+  CREATE TABLE Book
+  (
+   Book_no integer,
+   Title varchar(100),
+   Subject varchar(25)
+  );
+
+  CREATE TABLE Customer
+  (
+   User_id integer,
+   Name varchar(30),
+   Date_of_birth date
+  );
+
+  CREATE TABLE Loan
+  (
+   User_id integer,
+   Book_no integer,
+   Date_due date,
+   Fine money
+  );
+
+Task2
+ ALTER TABLE Book
+ ADD (Author varchar(30), Publisher varchar(60), ISNB integer);
+ 
+ ALTER TABLE Loan
+ ADD (Paid boolean);
+
+ ALTER TABLE Customer
+ ADD (Address varchar(130), Loan_status boolean);
+
+
+Task3
+  Book:
+    INSERT INTO Book VALUES (0001, 'SQL', 'Computer', 'David J. LILJA', 'Cambridge', 36272);
+    INSERT INTO Loan VALUES (1122, 0001, '2009-10-21', 3.44, true);
+    INSERT INTO Customer VALUES ( 1122, 'Alex', '1990-01-11', 'Suzhou', false);
+
+Task4
+	1:
+		SELECT * FROM Customer;
+	2: 
+		SELECT Author, Subject FROM Book;
+	3: 
+		SELECT Publisher FROM Book;
+	4: 
+		SELECT User_id From Loan WHERE (Fine >= 2) And (Paid = true);
+	5:
+		SELECT Book_no, Title FROM Book WHERE (Book_no in (SELECT Book_no FROM Loan WHERE User_id BETWEEN 100 AND 200 GROUP BY User_id HAVING SUM(Fine) > 2) );
+	6:
+		SELECT DISTINCT Customer.Name, Customer.Age From Customer, Loan WHERE Customer.User_id = Loan.User_id;
+	7:
+		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE (Book.Book_no IN (SELECT DISTINCT Book_no FROM Loan )) AND (Book.Title REGEXP '.*Software.*') AND Book.Book_no = Loan.Book_no) AND (Customer.User_id = Loan.User_id);
+	8:
+		SELECT DISTINCT Book.Title FROM Book, Loan WHERE Loan.Paid = 1 AND Loan.Book_no = Book.Book_no ORDER BY Book.Title;
+
+
+
+	
+	
+
+
+
+
+  
+    
+  

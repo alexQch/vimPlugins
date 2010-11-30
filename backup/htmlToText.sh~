@@ -1,0 +1,34 @@
+# !/bin/sh
+
+if [ ! -d "htmldir" ] 
+then
+    echo "Creating dir"
+    mkdir ori
+fi
+
+cd ori
+cp ../getText ./
+echo "alex" > final
+echo "Downloading files......."
+
+i=0
+
+for i in `seq 1 12`
+do 
+    if [ $i -lt 10 ]
+    then 
+        wget http://ds.eywedu.com/gulong/04/test00$i.htm
+        iconv -f GB2312 -t UTF-8 test00$i.htm>test$i.h
+        rm test00$i.htm
+    else 
+        wget http://ds.eywedu.com/gulong/04/test0$i.htm
+        iconv -f GB2312 -t UTF-8 test0$i.htm>test$i.h
+        rm test0$i.htm
+    fi
+    echo "Attending test$i to final of html directory"
+    ./getText test$i.h >> final
+    rm test$i.h 
+done
+
+cd ..
+

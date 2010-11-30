@@ -1,0 +1,50 @@
+package main
+
+import (
+    "fmt"
+    "os"
+    "flag"
+    "bufio"
+)   
+
+var nFlag = flag.Bool("n", false, `no \n`)
+
+type TZ int
+const (
+        HOUR TZ = 60*60; UTC TZ = 0*HOUR; EST TZ = -5 * HOUR;
+      )
+
+var timeZones = map[string]TZ { "UTC": UTC, "EST": EST}
+func (tz TZ) String() string {
+    for name, zone := range timeZones{
+        if tz == zone { return name}
+    }
+    return fmt.Sprintf("%+d:%02d%v", tz/3600, (tz%3600)/60, UTC);
+}
+
+func main(){
+    a := 1<<3
+    fmt.Printf("Hello %d \n", 23)
+    fmt.Fprint(os.Stdout, "Hello", 23, "\n")
+    fmt.Println(fmt.Sprint("hello ", 23))
+    fmt.Printf("Hello %+v \n", a)
+
+    flag.Parse();
+    s := "";
+    for i:=0; i < flag.NArg(); i++ {
+        if i > 0 {s += " " }
+        s += flag.Arg(i)
+    }
+    if !*nFlag { s += "\n"}
+    os.Stdout.WriteString(s);
+    
+    fmt.Println(EST);
+    fmt.Println(5*HOUR/2);
+
+    fmt.Fprintf(os.Stdout, "%s, ", "hello");
+    buf := bufio.NewWriter(os.Stdout);
+    fmt.Fprintf(buf, "%s, ", "hello");
+    buf.Flush();
+
+
+}

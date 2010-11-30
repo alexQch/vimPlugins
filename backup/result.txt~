@@ -1,0 +1,72 @@
+
+Time: 
+NumberofTests: 10		Significance Level: 0.05	StandardTTest: 1.8331	TTest: 0.4728662437434604	Reject N.H.?NO
+NumberofTests: 10		Significance Level: 0.01	StandardTTest: 2.8214	TTest: 0.4728662437434604	Reject N.H.?NO
+
+Cover: 
+NumberofTests: 10		Significance Level: 0.05	StandardTTest: 1.8331	TTest: 5.809475019311126	Reject N.H.?Yes
+NumberofTests: 10		Significance Level: 0.01	StandardTTest: 2.8214	TTest: 5.809475019311126	Reject N.H.?Yes
+============================================================================================================================================
+
+Time: 
+NumberofTests: 20		Significance Level: 0.05	StandardTTest: 1.7291	TTest: 0.9603801836186431	Reject N.H.?NO
+NumberofTests: 20		Significance Level: 0.01	StandardTTest: 2.5395	TTest: 0.9603801836186431	Reject N.H.?NO
+
+Cover: 
+NumberofTests: 20		Significance Level: 0.05	StandardTTest: 1.7291	TTest: 3.1141478235091324	Reject N.H.?Yes
+NumberofTests: 20		Significance Level: 0.01	StandardTTest: 2.5395	TTest: 3.1141478235091324	Reject N.H.?Yes
+============================================================================================================================================
+
+Time: 
+NumberofTests: 30		Significance Level: 0.05	StandardTTest: 1.6991	TTest: 0.7905694150420948	Reject N.H.?NO
+NumberofTests: 30		Significance Level: 0.01	StandardTTest: 2.462	TTest: 0.7905694150420948	Reject N.H.?NO
+
+Cover: 
+NumberofTests: 30		Significance Level: 0.05	StandardTTest: 1.6991	TTest: 2.5831706681202733	Reject N.H.?Yes
+NumberofTests: 30		Significance Level: 0.01	StandardTTest: 2.462	TTest: 2.5831706681202733	Reject N.H.?Yes
+============================================================================================================================================
+
+Time: 
+NumberofTests: 40		Significance Level: 0.05	StandardTTest: 1.6849	TTest: 0.933918879155706	Reject N.H.?NO
+NumberofTests: 40		Significance Level: 0.01	StandardTTest: 2.4258	TTest: 0.933918879155706	Reject N.H.?NO
+
+Cover: 
+NumberofTests: 40		Significance Level: 0.05	StandardTTest: 1.6849	TTest: 2.9630186172528235	Reject N.H.?Yes
+NumberofTests: 40		Significance Level: 0.01	StandardTTest: 2.4258	TTest: 2.9630186172528235	Reject N.H.?Yes
+============================================================================================================================================
+
+Time: 
+NumberofTests: 50		Significance Level: 0.05	StandardTTest: 1.6766	TTest: 1.2326312688558732	Reject N.H.?NO
+NumberofTests: 50		Significance Level: 0.01	StandardTTest: 2.4049	TTest: 1.2326312688558732	Reject N.H.?NO
+
+Cover: 
+NumberofTests: 50		Significance Level: 0.05	StandardTTest: 1.6766	TTest: 2.3000514315562746	Reject N.H.?NO
+NumberofTests: 50		Significance Level: 0.01	StandardTTest: 2.4049	TTest: 2.3000514315562746	Reject N.H.?NO
+============================================================================================================================================
+
+Time: 
+NumberofTests: 100		Significance Level: 0.05	StandardTTest: 1.6604	TTest: 1.471630134903141	Reject N.H.?NO
+NumberofTests: 100		Significance Level: 0.01	StandardTTest: 2.3646	TTest: 1.471630134903141	Reject N.H.?NO
+
+Cover: 
+NumberofTests: 100		Significance Level: 0.05	StandardTTest: 1.6604	TTest: 2.7438329439237585	Reject N.H.?Yes
+NumberofTests: 100		Significance Level: 0.01	StandardTTest: 2.3646	TTest: 2.7438329439237585	Reject N.H.?Yes
+============================================================================================================================================
+
+Time: 
+NumberofTests: 150		Significance Level: 0.05	StandardTTest: 1.6551	TTest: 1.7919840670473937	Reject N.H.?Yes
+NumberofTests: 150		Significance Level: 0.01	StandardTTest: 2.3516	TTest: 1.7919840670473937	Reject N.H.?NO
+
+Cover: 
+NumberofTests: 150		Significance Level: 0.05	StandardTTest: 1.6551	TTest: 3.0045973378347903	Reject N.H.?Yes
+NumberofTests: 150		Significance Level: 0.01	StandardTTest: 2.3516	TTest: 3.0045973378347903	Reject N.H.?Yes
+============================================================================================================================================
+
+Time: 
+NumberofTests: 200		Significance Level: 0.05	StandardTTest: 1.6525	TTest: 2.1740772135528155	Reject N.H.?Yes
+NumberofTests: 200		Significance Level: 0.01	StandardTTest: 2.3452	TTest: 2.1740772135528155	Reject N.H.?NO
+
+Cover: 
+NumberofTests: 200		Significance Level: 0.05	StandardTTest: 1.6525	TTest: 3.321301270376282	Reject N.H.?Yes
+NumberofTests: 200		Significance Level: 0.01	StandardTTest: 2.3452	TTest: 3.321301270376282	Reject N.H.?Yes
+============================================================================================================================================

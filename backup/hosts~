@@ -1,0 +1,62 @@
+#
+# /etc/hosts: static lookup table for host names
+#
+
+#<ip-address>	<hostname.domain.org>	<hostname>
+127.0.0.1		localhost.localdomain	localhost alex-laptop
+
+# End of file
+#
+# Across the GFW
+
+
+    168.143.161.20 twitter.com
+    168.143.161.20 www.twitter.com
+    128.121.146.229 assets0.twitter.com
+    128.121.146.229 assets1.twitter.com
+    128.121.146.101 static.twitter.com
+    128.121.146.229 assets2.twitter.com
+    128.121.146.229 assets3.twitter.com
+    65.74.185.41 twitter.zendesk.com
+    65.74.185.41 help.twitter.com
+    168.143.162.107 search.twitter.com
+
+    203.208.39.104 www.youtube.com
+    203.208.33.100 gdata.youtube.com
+    203.208.39.99 upload.youtube.com
+    203.208.39.99 insight.youtube.com
+    203.208.39.160 help.youtube.com
+    203.208.39.104 youtube.com
+    203.208.33.100 s.ytimg.com
+    203.208.35.101 www.youtube.com
+    203.208.39.160 m.youtube.com
+    203.208.35.101 gdata.youtube.com
+    203.208.35.101 youtube.com
+    203.208.35.101 upload.youtube.com
+    203.208.35.101 insight.youtube.com
+    203.208.35.101 help.youtube.com
+    203.208.35.101 s.ytimg.com
+    203.208.35.101 i1.ytimg.com
+    203.208.35.101 i2.ytimg.com
+    203.208.35.101 i3.ytimg.com
+    203.208.35.101 i4.ytimg.com
+
+    203.208.39.160 s.ytimg.com
+    203.208.39.104 picasaweb.google.com
+    203.208.39.99 lh1.ggpht.com
+    203.208.39.99 lh2.ggpht.com
+    203.208.39.99 lh3.ggpht.com
+    203.208.39.99 lh4.ggpht.com
+    203.208.39.99 lh5.ggpht.com
+    203.208.39.99 lh6.ggpht.com
+
+    124.40.42.105 www.facebook.com
+    69.63.180.173 login.facebook.com
+    69.192.34.110 s-static.ak.facebook.com
+    69.63.176.69 secure-profile.facebook.com
+    69.63.176.59 secure-media-sf2p.facebook.com
+    69.63.178.13 ssl.facebook.com
+    96.6.122.57 profile.ak.facebook.com
+    64.211.21.152 b.static.ak.facebook.com
+#end
+

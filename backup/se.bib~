@@ -1,0 +1,30 @@
+@book{Susan2008,
+author = {Susan, Dalebout},
+edition = {1st},
+keywords = {Medical},
+pages = {243},
+publisher = {ABC-CLIO},
+title = {{The Praeger Guide to Hearing and Hearing Loss: Assessment, Treatment, and Prevention}},
+year = {2008}
+}
+
+@book{nissanke1999formal,
+  title={{Formal specification: techniques and applications}},
+  author={Nissanke, N.},
+  isbn={9781852330026},
+  lccn={99036324},
+  url={http://books.google.com/books?id=e35GAAAAYAAJ},
+  year={1999},
+  publisher={Springer}
+}
+@article{Zelkowitz1988,
+author = {Zelkowitz, Marvin},
+doi = {10.1016/0066-4138(88)90013-4},
+file = {:home/chenhui/Dropbox/document/uol/softwareEngineering/a1/report/reading/formalSpecification.pdf:pdf},
+issn = {00664138},
+pages = {83},
+title = {{Formal specification}},
+url = {http://linkinghub.elsevier.com/retrieve/pii/0066413888900134},
+volume = {14},
+year = {1988}
+}

@@ -1,0 +1,25 @@
+%        File: fbox_minipage.tex
+%     Created: Mon Nov 15 11:00 PM 2010 G
+% Last Change: Mon Nov 15 11:00 PM 2010 G
+%
+\documentclass[a4paper]{article}
+\begin{document}
+\fbox{
+\begin{minipage}[t]{\textwidth}
+    1\\
+    \\
+    \\
+    \
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    1
+
+    1
+    23
+    1
+    231
+    23123
+\end{minipage}
+}
+\end{document}
+
+

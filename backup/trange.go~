@@ -1,0 +1,9 @@
+package main
+
+import "fmt"
+
+func main(){
+    for pos,char := "中文" {
+        fmt.Printf("Character %c starts at byte position %d\n", char, pos)
+    }
+}

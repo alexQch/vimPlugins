@@ -1,0 +1,204 @@
+import java.util.Scanner; 
+
+public class ATMAccount {
+
+	boolean permission;
+	double BalanceCredit=1000, BalanceSavings=2000;
+	double balance1=0,balance2=0;
+	static String customerName="cxy";
+	static String pinNumber="123";
+	double tra=0;
+	int account, act;
+
+
+	String result;
+	
+//according to the pin the user input to decide if the user gain permission to operate
+	public void login(){
+		System.out.println("Welcome to the ATM System,"+customerName);
+		System.out.print("Pin number:\n");
+		Scanner a = new Scanner(System.in);
+		String num = a.next();
+		if (num.equals(pinNumber)){
+			permission=true;
+		}else{
+			permission=false;
+		}
+	}
+	
+	
+//system log off	
+	public void logout(){
+		System.out.println("\nThank you for using ATM system!");
+		System.exit(0);
+	}
+	
+	
+	public void getBalance(){
+
+		int i=0;
+		tra=0;
+
+//choose the account for Transaction	
+		System.out.println("\nSelect account for Transaction:\n1.Credit \n2.Savings");
+		Scanner a = new Scanner(System.in);
+		account= a.nextInt();
+		switch(account){
+		case 1:
+			balance1 = BalanceCredit;
+			balance2 = BalanceSavings;
+			break;
+		case 2:
+			balance1 = BalanceSavings;
+			balance2 = BalanceCredit;
+			break;
+		default:
+			System.out.println("\nError! Invalid input, please enter again!");
+			getBalance();
+		}
+		
+//require the user to input amount for transaction		
+		while(tra<=0){
+			System.out.println("\nEnter amount for Transaction:");
+			Scanner b= new Scanner(System.in);
+			tra = b.nextDouble();
+			if (tra<=0){
+				System.out.println("\nThe amount for tansaction must be positive,please enter again!");
+			}
+		}
+		
+//calculate the balance		
+		while(i==0){
+			System.out.println("\nSelect Action:\n1.Deposit\n2.Withdraw\n3.Transfer To\n4.Quit");
+			Scanner c = new Scanner(System.in);
+			act= c.nextInt();
+			
+			switch(act){
+			case 1:
+				balance1 = balance1 +tra;
+				i=1;
+				break;
+			case 2:
+				balance1 = balance1 -tra;
+				i=1;
+				break;
+			case 3:
+				balance1 = balance1 -tra;
+				balance2 = balance2 +tra;
+				i=1;
+				break;
+			case 4:
+				logout();
+			default:
+				System.out.println("\nError! Invalid input, please enter again!");
+				break;
+			}
+		}
+		
+		
+		
+
+//decide if the user's amount for transaction is out of limit		
+		switch(account){
+		case 1:
+			if(balance1<-2000 || balance2<0){
+				System.out.println("\nThe Credit balance cannot be less than -2000 and the savings balance can not be overdraw!\nPlease retry!");
+				getBalance();	
+			}else{
+				BalanceCredit = balance1 ;
+				BalanceSavings= balance2;
+			}
+			break;
+		case 2:
+			if(balance2<-2000 || balance1<0){
+				System.out.println("\nThe Credit balance cannot be less than -2000 and the savings balance can not be overdraw!\nPlease retry!");
+				getBalance();	
+			}else{
+				BalanceSavings= balance1;
+				BalanceCredit = balance2 ;
+			}
+			break;
+		}
+		
+		System.out.println("\nTransaction succeed!");
+		
+		System.out.println("\nCredit balance:"+BalanceCredit+"\n"+ "Savings balance:"+BalanceSavings);
+		
+//ask the user to continue or quit		
+		while(i==1){
+			System.out.println("\nDo you wish to continue? \n1.Continue\n2.Quit");
+			Scanner d= new Scanner(System.in);
+			int k= d.nextInt();
+			switch(k){
+			case 1:
+				getBalance();
+			case 2:
+				logout();
+			default:
+				System.out.println("Error! Invalid input, please enter again!");
+				break;
+			}
+		}
+	
+	}
+	
+	
+//choose the account for transaction	
+	public void setaccount(int account){
+		this.account=account;
+		switch(account){
+		case 1:
+			this.balance1 = this.BalanceCredit;
+			this.balance2 = this.BalanceSavings;
+			break;
+		case 2:
+			this.balance1 = this.BalanceSavings;
+			this.balance2 = this.BalanceCredit;
+			break;
+		}
+	}
+
+
+//choose action	 and calculate the balance
+	public void setact(int act){
+		this.act=act;
+		switch(act){
+		case 1:
+			this.balance1 = this.balance1 +this.tra;
+			break;
+		case 2:
+			this.balance1 =this.balance1 -this.tra;
+			break;
+		case 3:
+			this.balance1 = this.balance1 -this.tra;
+			this.balance2 = this.balance2 +this.tra;
+			break;
+		}
+	}
+	
+//decide if the user's amount for transaction is out of limit	
+	public void getBalanceGUI(int account){	
+		if(account==1&&balance1>=-2000 && balance2>=0){
+			this.BalanceCredit = this.balance1 ;
+			this.BalanceSavings=this.balance2;
+			result="Credit balance:"+BalanceCredit       +"\n"+ "Savings balance:"+BalanceSavings;
+		}
+		if(account==1&&(balance1<-2000 || balance2<0)){
+			result="The Credit balance cannot be less than -2000 and the savings balance can not be overdraw! Please retry!";
+		}
+
+		if(account==2&&balance1>=0 && balance2>=-2000){
+			this.BalanceSavings= this.balance1;
+			this.BalanceCredit = this.balance2 ;
+			result="Credit balance:"+BalanceCredit       +"\n"+ "Savings balance:"+BalanceSavings;
+		}
+		if(account==1&&(balance1<0 || balance2<-2000)){
+			result="The Credit balance cannot be less than -2000 and the savings balance can not be overdraw! Please retry!";
+		}
+		
+	
+	}
+	
+	
+}
+

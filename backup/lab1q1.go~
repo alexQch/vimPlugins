@@ -1,0 +1,53 @@
+package main
+
+import (
+        "fmt"
+        "bufio"
+        "os"
+        "strconv"
+        "strings"
+)
+
+func main(){
+    fmt.Println("Please input the number of Hour");
+    hs := strings.TrimSpace(read());
+    fmt.Println("Please input the number of Minute");
+    ms := strings.TrimSpace(read());
+    fmt.Println("Please input the number of Second");
+    ss := strings.TrimSpace(read());
+
+        //hs := "30"
+        //ms := "10"
+        //ss := "30"
+
+
+    fmt.Println("Hour: " + hs + "Minute: " + ms + "Second: " + ss);
+
+     hsi, erh := strconv.Atoi(hs);
+     if erh != nil {
+         fmt.Println("invalid number");
+     }
+     msi, erm := strconv.Atoi(ms);
+     if erm != nil {
+         fmt.Println("invalid number");
+     }
+     ssi, ers := strconv.Atoi(ss);
+     if ers != nil {
+         fmt.Println("invalid number");
+     }
+    totalS := hsi * 3600 + msi * 60 + ssi;
+
+    fmt.Printf("%s%d", "The total Seconds are: ", totalS);
+
+}
+
+func read() string {
+    in := bufio.NewReader(os.Stdin);
+    s, err := in.ReadString('\n');
+    if err != nil {
+        fmt.Println("invalid input");
+    }
+    return s;
+}
+        
+        

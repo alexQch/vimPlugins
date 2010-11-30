@@ -1,0 +1,15 @@
+package main
+
+import (
+        "fmt"
+ )
+
+func main(){
+    Ps(1,2,3,4,5,6,7)
+}
+
+func Ps(arg ... int){
+    for _,i := range arg {
+        fmt.Printf("%v\n", i)
+    }
+}

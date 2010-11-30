@@ -1,0 +1,96 @@
+Section A
+ Task1: 
+  CREATE DATABASE Library; 
+  CREATE TABLE Book
+  (
+   Book_no integer,
+   Title varchar(100),
+   Subject varchar(25)
+  );
+
+  CREATE TABLE Customer
+  (
+   User_id integer,
+   Name varchar(30),
+   Date_of_birth date
+  );
+
+  CREATE TABLE Loan
+  (
+   User_id integer,
+   Book_no integer,
+   Date_due date,
+   Fine money
+  );
+
+--Note: As there is no money data type in mysql, the alternative type for recording money or currency can be decimal rather than float cause float will cause rounding errors when it comes to big sums. Since this assessment is not specific for mysql, I just use the data type money to record fines.
+
+Task2
+ ALTER TABLE Book
+ ADD (Author varchar(30), Publisher varchar(60), ISNB integer);
+ 
+ ALTER TABLE Loan
+ ADD (Paid boolean);
+
+ ALTER TABLE Customer
+ ADD (Address varchar(130), Loan_status boolean);
+
+
+Task3
+  Book:
+    INSERT INTO Book VALUES (0001, 'SQL', 'Computer', 'David J. LILJA', 'Cambridge', 36272);
+    INSERT INTO Loan VALUES (1122, 0001, '2009-10-21', 3.44, true);
+    INSERT INTO Customer VALUES ( 1122, 'Alex', '1990-01-11', 'Suzhou', false);
+
+Task4
+	1:
+		SELECT * FROM Customer;
+	2: 
+		SELECT Author, Subject FROM Book;
+	3: 
+		SELECT Publisher FROM Book;
+	4: 
+		SELECT DISTINCT User_id From Loan WHERE (Fine >= 2) And (Paid = true);
+	5:
+		SELECT Book_no, Title FROM Book WHERE ( Book_no in ( SELECT Book_no FROM Loan WHERE User_id BETWEEN 100 AND 200 GROUP BY User_id HAVING SUM(Fine) > 2));
+        SELECT Book.Book_no, Book.Title FROM Book, Loan WHERE ((Loan.User_id BETWEEN 100 AND 200 ) AND Loan.Book_no = Book.Book_no ) GROUP BY User_id HAVING SUM(Loan.Fine) > 2;  --it is an alternative one 
+
+	6:
+		SELECT DISTINCT Customer.Name, (YEAR(SYSDATE())-YEAR(Customer.Date_of_birth)) From Customer, Loan WHERE (Customer.User_id = Loan.User_id) and (Loan.Date_ret is Null);
+	7:
+		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE ( Book.Book_no IN (SELECT DISTINCT Book_no FROM Loan ) AND (Book.Title REGEXP '.*Software.*') AND (Book.Book_no = Loan.Book_no) AND (Customer.User_id = Loan.User_id));
+		SELECT Book.Title, Customer.Name From Book, Customer, Loan WHERE ( Book.Book_no = Loan.Book_no  ) AND (Book.Title REGEXP '.*Software.*') AND (Customer.User_id = Loan.User_id);
+	8:
+		SELECT DISTINCT Book.Title FROM Book, Loan WHERE Loan.Paid = 1 AND Loan.Book_no = Book.Book_no ORDER BY Book.Title;
+
+ Task5
+	1:
+        UPDATE Loan SET Fine = IF(Date_ret is Null, (SYSDATE() - Date_due) * 0.2, (Date_ret - Date_due) * 0.2) WHERE ((Date_ret is Null) OR (Date_ret > Date_due)) AND (Fine = 0);
+    2:
+        DELETE FROM Loan WHERE (Paid = 1) OR (Fine = 0);
+        
+
+
+
+        use c2;
+
+
+      select * from Customer;
+        alter table Customer modify Date_of_birth date;
+        update Customer set Date_of_birth = '1963-01-22';
+
+
+		
+
+
+
+
+	
+
+
+
+
+  
+ select * from Customer
+
+  

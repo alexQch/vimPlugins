@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+\title{My \LaTeX\ Learning: {\bf Floating Figures}}
+\author{Chenhui Quan}
+\date{\today}
+\maketitle
+\begin{figure}  
+    \centering
+    \includegraphics[width=40mm,height=60mm]{t1.jpg}
+    \caption{This is an inserted EPS graphic}
+    \label{fig1}
+\end{figure}
+
+\section{Why we learning \LaTeX?}\label{wwl}
+\section{Got cha}
+    and the command \ref{wwl} at the place of reference in the second section as \ldots(see Section \ref{wwl} for \ldots
+
+
+In the classical \emph{syllogism}
+\begin{enumerate}
+    \item All men are mortal.\label{pre1}
+    \item Socrates is a man.\label{pre2}
+    \item So Socrates is a mortal.\label{con}
+\end{enumerate}
+Statements (\ref{pre1}) and (\ref{pre2}) are the \emph{premises} and \\ statment (\ref{con}) is the conclusion.
+
+
+\end{document}

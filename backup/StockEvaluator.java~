@@ -1,0 +1,16 @@
+class StockEvaluator{
+    double shares = 1000, property = 0;
+
+
+     public void buy(double newPrice){
+         shares = shares + 100;
+         property = property - 100 * (newPrice +  Driver.CHARGE);
+     }
+
+     public void sell(double newPrice){
+            property = property + shares * newPrice;
+            if(shares > 35) property -= (shares * Driver.CHARGE);
+            shares = 0;
+    }
+
+}

@@ -1,0 +1,61 @@
+%     Created: Thu Nov 11 10:00 PM 2010 G
+% Last Change: Thu Nov 11 10:00 PM 2010 G
+%
+\documentclass[a4paper]{article}
+\linespread{1.5}
+\usepackage{enumerate}
+\usepackage{mdwlist}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{html}
+\usepackage{url}                      
+\usepackage{harvard}
+\renewcommand{\harvardurl}{URL: \url}
+\title{Assignment2 \\{\large COMP207 Database}}
+\author{Name:   Chenhui Quan\\
+ID:     200750542\\
+Computer Science \& Electronic Engineering Department
+}
+\date{\today}
+\begin{document}
+\maketitle
+\clearpage
+\tableofcontents
+\clearpage
+\section{Task 1}
+\subsection{A}
+Create an XML document and a DTD for the Hotel Schema given above. Validate the syntax of the XML document using the validation tool available at http://www.w3schools.com/XML/xml\_validator.asp and capture a screenshot of the output of the validator. Please read the instructions carefully before validating the document created.
+\subsection{B}
+\begin{singlespace}
+Generate the XQuery expression for the following queries:
+    \begin{enumerate}[\hspace{0.5cm} (a)]
+        \item List the full details of all hotels;
+        \item List all double or family rooms with a price below £ 40.00 per night, in ascending order of price;
+        \item What is the average price of a room? 
+        \item How many different guests have made bookings for August? 
+        \item List the full details of all hotels in London; 
+        \item List the price and type of all rooms at the Grosvenor Hotel; 
+        \item List all guests currently staying at the Grosvenor Hotel; 
+        \item What is the total revenue per night from all double rooms? 
+        \item List the number of rooms in each hotel in London; 
+        \item How many hotels are there?
+    \end{enumerate}
+\end{singlespace}
+\section{Task 2}
+Consider the Hotel schema above. Produce an object-oriented schema(UML) for the system. Suggest at least 10 (extra marks will be awarded for more) methods that would be applicable to the system.
+\section{Task 3}
+Consider the Hotel schema above. Redesign this schema as an object-relational schema. Add any user-defined functions that you consider appropriate.
+\section{Task 4}
+    For each of the following schedules state whether they are serializable, conflict serializable, and/or recoverable. Draw a precedence graph for each of the schedules. When checking for serializability with abort operations in the schedule, consider the schedule with and without the abort operation.
+    \begin{enumerate*}
+        \item $r_{1}$(balx), $r_{2}$(balx), $w_{1}$(balx), $w_{2}$(balx), commit(T1), commit(T2)
+        \item $r_{1}$(balx), $r_{2}$(baly), $w_{3}$(balx), $r_{2}$(balx), $r_1$(baly), commit(T1), commit(T2)
+        \item $r_{1}$(balx), $w_{2}$(balx), $w_{1}$(balx), abort(T2), commit(T1)
+        \item $w_{1}$(balx), $r_{2}$(balx), $w_{1}$(balx), commit(T2), abort(T1)
+        \item $r_{1}$(balx), $w_{2}$(balx), $w_{1}$(balx), $r_{3}$(balx), commit(T1), commit(T2), commit(T3)
+    \end{enumerate*}
+
+%\bibliographystyle{agsm}   % (uses file "plain.bst")
+%\bibliography{se.bib}      % expects file "myrefs.bib"
+\end{document}

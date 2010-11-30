@@ -1,0 +1,21 @@
+package main
+
+import (
+    "fmt"
+)
+
+type Man struct {sex int}
+type Woman struct {sex int}
+
+func main(){
+}
+
+func which(w interface{}){
+    switch t:= w.(type){
+        case *Man:
+            fmt.Println("Man")
+        case *Woman:
+            fmt.Println("Woman")
+
+    }
+}

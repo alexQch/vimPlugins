@@ -1,0 +1,146 @@
+import java.awt.*;
+import java.applet.*;
+import java.awt.event.*; 
+
+public class ATMGUI extends Applet implements ActionListener {
+	Button okBt, exitBt, creditBt, savingsBt, depBt, witBt, tranBt, balaBt;
+    TextArea enterPin, selectAccount, enterTran, selectAction, checkbal, showR;
+    TextField t1, t2;
+    String s = " ";
+    ATMAccount atma;
+    
+
+
+    public void init(){
+        setLayout(new FlowLayout());
+        //initiallize button
+        okBt = new Button("OK");
+        exitBt = new Button("Exit");
+        creditBt = new Button("Credit");
+        savingsBt = new Button("Savings");
+        depBt = new Button("Deposit");
+        witBt = new Button("Withdraw");
+        tranBt = new Button("TransferTo");
+        balaBt = new Button("Balance");
+
+        //initialize textArea
+        enterPin = new TextArea("Enter Pin Number");
+        selectAccount = new TextArea("Select account for Transaction");
+        enterTran = new TextArea("Enter amount for Transaction");
+        selectAction = new TextArea("Select Action");
+        checkbal = new TextArea("Check account balances?");
+
+        t1 = new TextField(40);
+        t2 = new TextField(40);
+
+        //add the component
+        add(enterPin);
+        add(t1);
+        add(okBt);
+        add(exitBt);
+        add(selectAccount);
+        add(creditBt);
+        add(savingsBt);
+        add(enterTran);
+        add(t2);
+        add(selectAction);
+        add(depBt);
+        add(witBt);
+        add(tranBt);
+        add(checkbal);
+        add(balaBt);
+
+        add action listenner to the  button
+            okBt.addActionListener(this);
+        exitBt.addActionListener(this);
+        creditBt.addActionListener(this);
+        savingsBt.addActionListener(this);
+        depBt.addActionListener(this);
+        witBt.addActionListener(this);
+        tranBt.addActionListener(this);
+        balaBt.addActionListener(this);
+    }
+
+    //public void paint(Graphics g){
+    //g.drawString(s, 20,100);
+    //}
+
+	public void actionPerformed(ActionEvent evt) {}
+    /*
+	public void actionPerformed(ActionEvent evt) {		
+        if(evt.getSource() == okBt){
+                atma.login();
+                if(!atma.permission) s = "invalid pin number";       
+                else s = "log in sucessful";
+        }else if(evt.getSource() == exitBt) atma.logout();
+        else if(evt.getSource() == creditBt) atma.selectCre();
+        else if (evt.getSource() == savingsBt) atma.selectSav();
+        else if (evt.getSource() == depBt) atma.deposit(Integer.parseInt(t2.getText()));
+        else if (evt.getSource() == witBt) atma.withdraw(Integer.parseInt(t2.getText()));
+        //else if (evt.getSource() == tranBt) atma.transferTo();
+        else if (evt.getSource() == balaBt) s = atma.showBal();
+
+        repaint();
+
+	}
+
+    public void warn(){
+        s = "invalid action";
+    }
+
+  
+
+    public void selectCre(){
+        creSelected = true;
+        savSelected = false;
+    }
+    public void selectSav(){
+        creSelected = false;
+        savSelected = true;
+    }
+
+    public void login(){
+        if(t1.getText() == pinNumber)permission = true;
+    }
+    public void logout(){
+        System.exit(0);
+    }
+
+
+    public void deposit(int tran){
+        if(creSelected){
+            balanceCredit += tran;
+        }else if(savSelected){
+            balanceSavings += tran;
+        }
+
+    }
+
+    public void withdraw(int tran){
+        int temp;
+        if(creSelected){
+            temp = balanceCredit;
+            balanceCredit -= tran;
+            if(balanceCredit < -2000) {
+                balanceCredit = temp;
+                warn();
+            }
+        }else if(savSelected){
+            temp = balanceSavings;
+            balanceSavings -= tran;
+            if(balanceSavings < 0){
+                balanceSavings = temp;
+                warn();
+            }
+        }
+    }
+
+    public String showBal(){
+        return "Pin Number: " + pinNumber + "\nCustomer Name: " + customerName + "\nBalance of Credit: " + balanceCredit + "\nBalance of Savings: " + balanceSavings;
+    }
+
+
+
+    */
+
+}

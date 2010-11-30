@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+void prints(char a[]);
+
+int
+main(void){
+    char a[] = "0x12AB";
+    /*printf("%f",htd(a));*/
+    int i;
+    /*for (i = 0; i < 6; i++) {*/
+    /*printf("%c", a[i]);*/
+    /*}*/
+
+    prints(a);
+
+    return 0;
+
+}
+
+void
+prints(char a[]){
+    unsigned int i;
+    for (i = 0; i < 6; i++) {
+        printf("%d ", &a[i]);
+    }
+}

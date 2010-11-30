@@ -1,0 +1,32 @@
+package main 
+
+import (
+        "fmt"
+)
+
+type E interface{}
+func add(e E) E {
+    switch e.(type) {
+        case int:
+            return e.(int)+1
+        case string:
+            return (e.(string)+":")
+    }
+    return e
+}
+func Map(f func(E) E, e []E) []E {
+    m := make([]E, len(e))
+    for k,v := range e {
+        m[k] = f(v)
+    }
+    return m
+
+}
+func main(){
+    i := []E{1,2,3,4}
+    s := []E{"a","b","c"}
+    ii := Map(add,i)
+    ss := Map(add,s)
+    fmt.Printf("%v\n%v", ii,ss)
+
+}

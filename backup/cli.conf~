@@ -1,0 +1,4 @@
+ipcpath=NULL
+statusformat=${artist} - ${title}
+listformat=${artist} - ${title} (${minutes}:${seconds})
+autostart=true

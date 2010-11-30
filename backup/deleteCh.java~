@@ -1,0 +1,48 @@
+import java.io.File;
+import java.io.IOException;
+
+class deleteCh{
+    public static void main(String[] args){
+        DCH d = new DCH(new File("."));
+        d.changeName();
+    }
+}
+
+
+
+class DCH {
+    File dir;
+
+    DCH(File dir){
+        this.dir = dir;
+    }
+
+    public void changeName(){// delete chinese words from file name
+        String oldFName[] = dir.list();
+        for (int i = 0 ;i < oldFName.length ;i++ ) {
+            if(oldFName[i] != "deleteCh.java" && oldFName[i] != "deleteCh.class"){
+                File f = new File(oldFName[i]);
+                String newFName = deleteCh(oldFName[i]);
+                System.out.println(oldFName[i] + "\trename to \t" + newFName);
+                f.renameTo(new File(newFName));
+            }
+        }
+
+    }
+
+    private String deleteCh(String a){
+        char[] o = a.toCharArray();
+        char[] n = new char[o.length];
+        for (int i = 0, j = 0 ; i < o.length; i++) {
+            char t = o[i];
+            if( (t >='a' && t<= 'z')||(t >= 'A' && t <= 'Z')|| (t == '.')) {
+                n[j] = t;
+                j++;
+            }
+        }
+        String s = new String(n);
+        return s.trim();
+
+    }
+
+}

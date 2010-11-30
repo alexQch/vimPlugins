@@ -1,0 +1,19 @@
+package main
+
+import (
+        //"os"
+       "fmt"
+       "io/ioutil"
+       )
+
+func main(){
+    var s string
+    b,_ := ioutil.ReadFile("./a.txt")
+    if b != nil {
+      s = (string(b))
+    }
+
+    for i := range s {
+        fmt.Printf("%s", i)
+    }
+}

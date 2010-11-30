@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{endnotes}
+\begin{document}
+\title{My \LaTeX\ Learning: Something about notes}
+\author{Chenhui Quan}
+\date{\today}
+\maketitle
+
+\section{A}
+{\centering This is simple text.\endnote{The first endnote.}\\ This is simple text.\endnote{The second endnote.}\\ \centering This is simple text.\endnote{The third endnote}}
+\subsection{just a test}
+adfasdadfasdfsdf
+
+\theendnotes\bigskip
+This is some more simple text
+
+    
+\end{document}
+
+

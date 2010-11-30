@@ -1,0 +1,20 @@
+%        File: box.tex
+%     Created: Fri Jul 16 05:00 PM 2010 C
+% Last Change: Fri Jul 16 05:00 PM 2010 C
+%
+\documentclass[a4paper]{article}
+\begin{document}
+\title{My \LaTeX\ Learning: \emph{BOXES}}
+\author{Chenhui Quan}
+\date{\today}
+\maketitle
+
+\begin{section}
+    A
+    \framebox{A few words of advice}\\[6pt]
+    \framebox[5cm][s]{A few words of advice}\\[6pt]
+    \framebox[1.5\width]{A few words of advice}
+\end{section}
+\end{document}
+
+

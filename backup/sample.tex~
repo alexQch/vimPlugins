@@ -1,0 +1,21 @@
+\documentclass{article} 
+\pagestyle{empty} 
+\begin{document}
+\section*{Example of Citations of Kind \texttt{plain}} 
+Citation of a normal book˜
+\cite{Eijkhout:1991} and an edited book˜
+\cite{Roth:postscript}. Now we cite an article written by a single˜
+\cite{Felici:1991} and by multiple authors˜
+\cite{Mittlebatch/Schoepf:1990}. A reference to an article inside proceedings˜
+\cite{Yannis:1991}. We refer to a manual˜
+\cite{Dynatext} and a technical report˜
+\cite{Knuth:WEB}. A citation of an unpublished work˜
+\cite{EVH:Office}. A reference to a chapter in a book˜
+\cite{Wood:color} and to a PhD thesis˜
+\cite{Liang:1983}.
+editor, volume or number, series, type, chapter, pages, address, edi- tion, month, note.
+editor, volume or number, series, pages, address, month, organisa- tion, publisher, note.
+An example of multiple citations˜\cite{Eijkhout:1991,Roth:postscript}.
+\bibliographystyle{plain} %% plain.bst 
+\bibliography{bsample} %% bsample.bib 
+\end{document}

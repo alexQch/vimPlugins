@@ -1,0 +1,27 @@
+package main
+
+import (
+    "fmt"
+)
+
+func main(){
+    var p *int
+    fmt.Printf("%v\n", p)
+
+    i := 1
+    p = &i
+    fmt.Printf("%v\n", p)
+    fmt.Printf("%v\n", *p)
+
+    s := "Chenhui Quan"
+    b := []byte(s)
+    D := []int(s)
+    for _,i := range b {
+        fmt.Printf("%v,\t",i)
+    }
+    fmt.Println()
+    for _,i := range D {
+        fmt.Printf("%v,\t",i)
+    }
+
+}

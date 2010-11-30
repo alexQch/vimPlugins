@@ -1,0 +1,5 @@
+# !/bin/sh -e
+
+s=`du -h *|grep '^3.3.*\.jpg'|awk {'print $2'}`
+convert -quality 90 $s $s
+#echo $s

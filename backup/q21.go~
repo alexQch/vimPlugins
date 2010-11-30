@@ -1,0 +1,25 @@
+package main
+
+import( "fmt" )
+
+var c chan int
+var j int
+func main(){
+    c = make(chan int)
+    go F(1,1)
+    for i:= 3 ; i < 9; i++ {
+        F2()
+    }
+}
+
+func F1(a,b int){
+    c<-b;
+    c<-(a+b);
+}
+
+func F2(){
+a:=<-c;
+b :=<-c;
+      fmt.Printf("%v\t", b);
+      go F1(a,b);
+}

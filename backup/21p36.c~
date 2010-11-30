@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <limits.h>
+#include <float.h>
+
+#define BELL '\007'
+
+int
+main(void){
+    printf("%s%d%s%d", "The range of int is: ", INT_MIN, " to ", INT_MAX);
+    /*printf("%s%f%s%f", "The range of double is: ", DBL_MIN, " to ", DBL_MAX);*/
+    printf("%s%d%s", "The value of char: ", '0', '\0');
+    printf("%c", BELL);
+    return 0;
+} 

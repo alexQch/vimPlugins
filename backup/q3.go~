@@ -1,0 +1,22 @@
+package main
+
+import (
+    "fmt"
+    "math"
+)
+
+func main(){
+    for i := 1; i < 101; i++ {
+        j := float64(i)
+        if math.Fmod(j, 15) == 0 {
+            fmt.Printf("Fizz-Buzz\n")
+        } else if math.Fmod(j, 5) == 0 {
+            fmt.Printf("Buzz\n")
+        } else if math.Fmod(j, 3) == 0 {
+            fmt.Printf("Fuzz\n")
+        }else {
+            fmt.Printf("%d\n", j)
+        }
+
+    }
+}

@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage{pifont}
+\usepackage{makeidx}
+%\setlength{\textwidth}{5cm}
+\begin{document}
+\title{My first try on \LaTeX}
+\author{Chenhui Quan\\ Alex Quan}
+\date{Wde Jun 16}
+\maketitle
+This is my \emph{first} document prepared in \LaTeX. I typed it on \today.
+Carrots are good for your eyes, since they contain Vitamin A. Have you ever seen a rabbit wearing glasses?
+Note the difference in right and left quotes in `single quotes' and `double quotes''.
+
+X-rays are discussed in pages 221--225 of Volume 3---the volume on electromagnetic waves.
+
+\'{E}l est\'{a} aqu\'{\i}
+
+Maybe I have now learnt about 1%Ok This is supposed to be a comment
+
+Maybe I have now learnt about 1\% of \LaTeX.
+
+\textasciitilde \& \textbackslash \textasciicircum
+
+\noindent This is the \emph{first} line. \\ This is the \emph{second} line.  \\
+This is the first line.\\[1pt]
+This is the second line
+
+    \begin{center}
+      The \TeX nical Institute\\[.75cm]
+        Certificate
+    \end{center}
+    \noindent This is to certify that Mr. N. O. Vice has undergone a
+    course at this institute and is qualified to be a \TeX nician.
+    \begin{flushright}
+      The Director\\
+      The \TeX nical Institute
+    \end{flushright}
+
+    \section{Dividing the document}
+    \paragraph{some times we just need to do sth, but we forget to.. how the hell can this happen? \cite{knuth}}
+    \subparagraph{some times we do not have to do it, but we volunteer to .. why?}
+    \section{Why do we need to divide the document}
+
+    I certify that:
+    {\renewcommand{\labelitemi}{$\triangleright$}
+    \renewcommand{\labelitemii}{\ding{43}}
+    \begin{itemize}
+    \item I have read and understood the university's definitions of collusion and plagirism 
+        \begin{itemize}
+        \item collusion \& plagiarism
+        \item read
+        \item ding
+        \end{itemize}
+    \item I have not colluded with any other student in the preparation and production of the work;
+    \item This document has been \emph{writtern solely by me} and in my own words except where i have clearly indicated and acknowledged that i have quoted or used figures from published or unpublished osources.
+    \end{itemize}}
+    I understand that unauthorised collusion and the incorporation of material from other workds without acknowledgement are serious disciplinary offences.
+
+
+
+\end{document}
+
+

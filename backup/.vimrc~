@@ -1,0 +1,57 @@
+syntax on
+
+set autoindent
+set smartindent 
+set tabstop=4
+set shiftwidth=4
+set nocompatible "This setting prevents vim from emulating the original vi's bugs and limitations.
+set autochdir "always switch to the current file directory
+set backspace=indent,eol,start "make backspaces more flexible
+set backup "make backup files
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+set mouse=a "use mouse everywhere
+set noerrorbells "do not make noise
+set wildmenu "turn on command line completion wild style
+set showcmd " show the command being typed
+set showmatch " show matching brackets
+set wildmenu " turn on command line completion wild style
+set incsearch
+set virtualedit=all
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+
+"Vim UI
+set guioptions-=T "get rid of toolbar
+"set cursorcolumn "highlight the current column
+"set cursorline "highlight the current line
+set laststatus=2 "always show the status line
+"set list " show tabs 
+set number
+set numberwidth=5 "we are good to 99999 lines
+set report=0 " tell us when anything is changed via :...
+set ruler " Always show current positions along the bottom
+set expandtab " no real tabs please!
+"set nowrap " do not wrap line
+
+filetype plugin on
+
+let moria_style='dark'
+colo moria 
+filetype plugin indent on
+
+
+"For latex
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?> 
+<!DOCTYPE HotelS [
+<!ELEMENT HotelS (Hotel Room Booking Guest)*>
+    <!ELEMENT Hotel (hotelNo, hotelName, city)>
+        <!ELEMENT hotelNo (#PCDATA)>
+        <!ELEMENT hotelName (#PCDATA)>
+        <!ELEMENT city (#PCDATA)>
+    <!ELEMENT Room (roomNo, hotelNo, type, price)>
+        <!ELEMENT roomNo (#PCDATA)>
+        <!ELEMENT hotelNo (#PCDATA)>
+        <!ELEMENT type (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+    <!ELEMENT Booking (hotelNo, guestNo, dateFrom, dateTo, roomNo)>
+        <!ELEMENT hotelNo (#PCDATA)>
+        <!ELEMENT guestNo (#PCDATA)>
+        <!ELEMENT dateFrom (#PCDATA)>
+        <!ELEMENT dateTo (#PCDATA)>
+        <!ELEMENT roomNo (#PCDATA)>
+    <!ELEMENT Guest (guestNo, guestName, guestAddress)>
+        <!ELEMENT guestNo (#PCDATA)>
+        <!ELEMENT guestName (#PCDATA)>
+        <!ELEMENT guestAddress (#PCDATA)>
+]>
+<HotelS>
+    <Hotel>
+        <hotelNo>h1</hotelNo>
+        <hotelName>Liverpool H1</hotelName>
+        <city>Liverpool</city>
+    </Hotel>
+
+    <Room>
+        <roomNo>r1</roomNo>
+        <hotelNo>h1</hotelNo>
+        <type>single</type>
+        <price>15pounds per night</price>
+    </Room>
+
+    <Booking>
+        <hotelNo>h1</hotelNo>
+        <guestNo>g1</guestNo>
+        <dateFrom>Nov 23</dateFrom>
+        <dateTo>Nov 31</dateTo>
+        <roomNo>r1</roomNo>
+    </Booking>
+
+    <Guest>
+        <guestNo>g1</guestNo>
+        <guestName>Alex</guestName>
+        <guestAddress>Catharine Street</guestAddress>
+    </Guest>
+</HotelS>
+

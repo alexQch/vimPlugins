@@ -1,0 +1,21 @@
+package main
+
+import (
+        "fmt"
+       )
+
+func main(){
+    s := F(7)
+    fmt.Printf("The number you want is %v", s)
+}
+
+func F(n int) (int){
+    if n < 3 {
+        return 1
+    }else {
+        return (F(n-1)+F(n-2))
+    }
+    return -1
+    
+}
+    

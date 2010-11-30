@@ -1,0 +1,39 @@
+package main
+
+import (
+    "strings"
+    "os"
+    "fmt"
+    "strconv"
+    "bufio"
+)
+
+func main(){
+    r := bufio.NewReader(os.Stdin)
+    fmt.Println("Please input start number: ")
+    sn,_ := r.ReadString('\n')
+    fmt.Println("Please input end number: ")
+    en,_ := r.ReadString('\n')
+    fmt.Printf("sn: %v  en: %v\n", sn, en)
+
+    sni,_ := strconv.Atoi(strings.TrimSpace(sn))
+    eni,_ := strconv.Atoi(strings.TrimSpace(en))
+    fmt.Printf("sni: %v  eni: %v\n", sni, eni)
+    for n := sni; n < eni; n ++{
+        var o,s string
+        if n < 10 {
+            o = "IMG_000"+ strconv.Itoa(n)+".JPG"
+            s = "IMG_000"+ strconv.Itoa(n)+".jpg"
+        }else 
+        if n < 100 {
+            o = "IMG_00"+ strconv.Itoa(n)+".JPG"
+            s = "IMG_00"+ strconv.Itoa(n)+".jpg"
+        }else {
+            o = "IMG_0"+ strconv.Itoa(n)+".JPG"
+            s = "IMG_0"+ strconv.Itoa(n)+".jpg"
+        }
+        os.Rename(o, s)
+        fmt.Println(o + "\t" + s)
+    }
+}
+

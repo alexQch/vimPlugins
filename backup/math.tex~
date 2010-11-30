@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{amsmath}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator*{\esup}{ess\,sup}
+\begin{document}
+\title{My \LaTeX\ learning: \emph{Math}}
+\author{chenhui Quan}
+\date{\today}
+\maketitle
+
+$$
+2\sqrt{2}\,,\quad 2^2\sqrt{2-\sqrt{2}}\,,\quad 2^3\sqrt{2-\sqrt{2+\sqrt{2}}}
+$$
+
+The equation representing a straight line in the Cartesian plane is of the from
+$$
+ax+by+c=0
+$$
+
+{It is easily seen that $(x^m)^n=x^{mn}$.}
+
+The sequence $(x_n)$ defined by 
+$$
+x_1=1,\quad x_2=2,\quad x_n=x_{n-1}+x_{n-2} (n>2)
+$$
+is called the Fibonacci sequence.
+
+Define the relation $\rho$ on the set of real numbers by $x\mathrel\rho y$ iff $x-y$ is a rational number.
+
+\newcommand{\vect}[1]{(#1_1,#1_2,\dots,#1_n)}
+
+We often write x to denote the vector $\vect{y}$.
+
+\begin{equation*}
+    |x|=
+    \begin{cases}
+        x & \text{if $x\ge 0$}\\
+        -x & \text{if $x\le 0$}
+    \end{cases}
+\end{equation*}
+
+
+\begin{equation}
+    ax+by+c=0
+\end{equation}
+where $a,b,c$ are constants.
+
+\begin{equation}
+    ax+by+c=0\tag{L}
+\end{equation}
+where $a,b,c$ are constants.
+
+
+$\sideset{_{ll}^{ul}}{_{lr}^{ur}}\bigcup$
+$\sideset{}{'}\sum$
+
+Some mathemaicians write matrices within parentheses as in 
+$
+\begin{pmatrix}
+    a & b\\
+    c & d
+\end{pmatrix}
+$
+while others prefer square brackets as in
+$
+\begin{bmatrix}
+    a & b\\
+    c & d
+\end{bmatrix}
+$
+
+
+\begin{equation*}
+    \left.
+        \begin{aligned}
+            u_x & = v_y\\
+            u_y & = -v_x
+        \end{aligned}
+    \right\}
+    \quad\text{Cauchy-Riemann Equantions}
+\end{equation*}
+
+\begin{equation}
+    |x_n|<\tfrac{1}{2}\quad\text{for all $n\ge p$}
+\end{equation}
+
+\begin{equation}
+    |x_n|<\dfrac{1}{2}\quad\text{for all $n\ge p$}
+\end{equation}
+    
+\begin{equation}
+    |x_n|<\frac{1}{2}\quad\text{for all $n\ge p$}
+\end{equation}
+
+\begin{equation}
+    \frac{4}{\pi}=1+\cfrac{1^2}{2+\cfrac{3^2}{2+\cfrac{5^2}{2+\dotsb }}}
+\end{equation}
+
+We denote the closure of $A$ in the subspace $Y$ of $X$ by $\cl_Y(A)$
+
+For $f\in L^\infty(R)$, we define
+\begin{equation*}
+    ||f||_\infty=\esup_{x\in R}|f(x)|
+\end{equation*}
+\end{document}

@@ -1,0 +1,50 @@
+%        File: therm.tex
+%     Created: Thu Jul 15 10:00 PM 2010 C
+% Last Change: Thu Jul 15 10:00 PM 2010 C
+%
+\documentclass[a4paper]{article}
+\begin{document}
+\title{My \LaTeX\ Learning: Theorem}
+\author{Chenhui Quan}
+\date{\today}
+\maketitle
+\newtheorem{thm}{Theorem}
+
+\begin{thm}
+    The sum of the angles of a triangle is $180^\circ$.
+\end{thm}
+
+\begin{thm}
+    \TeX\ is a typesetting system desinged and mostly written by Donald Knuth.
+\end{thm}
+
+\newtheorem{hm}{Theorem}[section]
+\begin{hm}
+    The sum of the angles of a triangle is $180^\circ$.
+\end{hm}
+
+\begin{hm}
+    \TeX\ is a typesetting system desinged and mostly written by Donald Knuth.
+\end{hm}
+
+\begin{section}
+    T This is a new Section.
+    \begin{hm}
+        The sum of the angles of a triangle is $180^\circ$.
+    \end{hm}
+    \begin{hm}
+        \TeX\ is a typesetting system desinged and mostly written by Donald Knuth.
+    \end{hm}
+\end{section}
+\begin{section}
+    F This is a new Section.
+    \begin{hm}
+        The sum of the angles of a triangle is $180^\circ$.
+    \end{hm}
+    \begin{hm}
+        \TeX\ is a typesetting system desinged and mostly written by Donald Knuth.
+    \end{hm}
+\end{section}
+\end{document}
+
+

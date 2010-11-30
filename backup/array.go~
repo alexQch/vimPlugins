@@ -1,0 +1,26 @@
+package main
+
+import (
+    "fmt"
+)
+
+func main(){
+    var a  [10]int
+    a[0] = 1
+    a[1]=2
+    fmt.Printf("The first element is %d\n", a[0])
+    fmt.Printf("The third element is %d\n", a[3])
+
+    b := [...]int {1,2,3,4,5}
+    for i := 1; i < len(b); i++{
+        fmt.Printf("The third element is %d\n", b[i])
+    }
+    
+    var array [100]int
+    slice := array[0:99]
+
+    slice[98] = 2
+    slice[99] = 2
+
+
+}

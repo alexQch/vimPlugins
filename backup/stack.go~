@@ -1,0 +1,30 @@
+package stack
+
+import (
+        "strconv"
+       )
+
+type S struct {
+    i int
+    ss [10]int
+}
+
+func (s *S) Pop(){
+    s.i--
+    fmt.Printf("%v\n",s.ss[s.i])
+}
+
+func (s *S) Push(j int){
+    s.ss[s.i] = j
+    s.i++
+}
+
+func (s *S) String() string {
+    var str string
+    i := 0
+    for _, n := range s.ss {
+        str = str + "[" + strconv.Itoa(i) + ":" + strconv.Itoa(n) + "] "
+        i++
+    }
+    return str
+}

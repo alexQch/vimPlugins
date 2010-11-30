@@ -1,0 +1,124 @@
+
+
+import java.util.*;
+
+public class Knapsack {
+
+    int[] profit ;
+    int[] weight ;
+    boolean[] take;
+ 
+    // solver A
+    public void solverA (int N, int W, int[] wei, int[] ben) {
+        profit = new int[N+1];
+        weight = new int[N+1];
+        for (int i=1; i <= N; i++) {
+          profit[i] = ben[i-1];
+          weight[i] = wei[i-1];
+        }
+        // opt[n][w] = max profit of packing items 1..n with weight limit w
+        // sol[n][w] = does opt solution to pack items 1..n with weight limit w include item n?
+        int[][] opt = new int[N+1][W+1];
+        boolean[][] sol = new boolean[N+1][W+1];
+
+        for (int n = 1; n <= N; n++) {
+            for (int w = 1; w <= W; w++) {
+
+                // don't take item n
+                int option1 = opt[n-1][w];
+
+                // take item n
+                int option2 = Integer.MIN_VALUE;
+                if (weight[n] <= w) option2 = profit[n] + opt[n-1][w-weight[n]];
+
+                // select better of two options
+                opt[n][w] = Math.max(option1, option2);
+                sol[n][w] = (option2 > option1);
+            }
+        }
+
+        // determine which items to take
+        take = new boolean[N+1];
+        for (int n = N, w = W; n > 0; n--) {
+            if (sol[n][w]) { take[n] = true;  w = w - weight[n]; }
+            else           { take[n] = false;                    }
+        }
+    }
+    
+    // solver B
+    public void solverB (int N, int W, int[] wei, int[] ben) {
+        profit = new int[N+1];
+        weight = new int[N+1];
+        for (int i=1; i <= N; i++) {
+          profit[i] = ben[i-1];
+          weight[i] = wei[i-1];
+        }
+        
+        // sorts profits in decreasing order
+        for( int p = 1; p <= N; p++ ) {
+         int maxV = profit[p];
+         int maxI = p;
+         for (int i = p+1; i <= N; i++) { 
+             if (maxV < profit[i]) {
+                maxV = profit[i]; maxI = i;
+              }
+          }
+          profit[maxI] = profit[p];
+          profit[p] = maxV;
+          int q = weight[p];
+          weight[p] = weight[maxI];       
+          weight[maxI] = q;
+       }
+       
+       // greedy solution
+       int maxW = 0;
+       take = new boolean[N+1];
+       for (int n=1; n <= N; n++){
+          take[n] = false;
+          if ((maxW+weight[n])<W) {
+              maxW += weight[n];
+              take[n] = true;
+           }
+        }
+    }
+    
+    
+    // get the solution
+    public boolean[] getSolution() {
+        return take;
+    }
+    
+    // get the benefit vector
+    public int[] getBenefit() {
+        return profit;
+    }
+    
+    // get the weight vector
+    public int[] getWeight() {
+        return weight;
+    }
+    
+    public void evalSolution() {
+      int totalB = 0;
+      int totalW = 0;
+      int l = profit.length;
+      for (int i=1; i<l; i++) {
+          if (take[i])  {
+              totalB += profit[i];
+              totalW += weight[i];
+            }
+      }
+      //System.out.println("Optimal Solution found with total weight: "+totalW+" total benefit: "+ totalB);
+      System.out.print(totalW+"\t"+ totalB);
+    }
+    // print results
+    public void printSolution() {
+        int l = profit.length;
+        System.out.println("item" + "\t" + "profit" + "\t" + "weight" + "\t" + "take");
+        for (int n = 1; n < l; n++) {
+            System.out.println(n + "\t" + profit[n] + "\t" + weight[n] + "\t" + take[n]);
+        }
+    }
+    
+}
+

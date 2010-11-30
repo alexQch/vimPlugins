@@ -1,0 +1,50 @@
+/*
+ *          File: employee.cpp
+ *        Author: Robert I. Pitts <rip@cs.bu.edu>
+ * Last Modified: April 21, 2000
+ *         Topic: Introduction to Polymorphism in C++
+ * ----------------------------------------------------------------
+ *
+ * Employee method definitions.
+ */
+
+#include "employee.h"
+
+// Normal constructor
+Employee::Employee(string theName, float thePayRate)
+{
+	name = theName;
+	payRate = thePayRate;
+}
+
+// Deconstructor
+Employee::~Employee() {}
+
+
+string Employee::getName() const
+// constant methods cannot modify the data member value
+// can be considered as "read-only" function
+{
+	return name;
+}
+
+float Employee::getPayRate() const
+{
+	return payRate;
+}
+
+float Employee::pay(float hoursWorked) const
+{
+	return hoursWorked * payRate;
+}
+
+void Employee::printPay(float hoursWorked) const
+{
+	cout << "Pay: " << pay(hoursWorked) << endl;
+}
+
+void Employee::print(float hoursWorked) const
+{
+    cout << "Name: " <<  name << "\nPay rate: " << payRate << endl;
+    printPay(hoursWorked);
+}
